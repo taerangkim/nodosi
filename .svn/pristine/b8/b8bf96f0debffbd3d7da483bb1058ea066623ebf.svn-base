@@ -1,0 +1,3631 @@
+{"access_token":"ETBc3cDkTFrssbdqH-dWe0ivI3TY2_YtbOBD36CKCisNIAAAAYSkN9Ge","token_type":"bearer","refresh_token":"ToA9gqGTPDGLmfJ9WVVNphUK3jSNv7D-f1Q9z6cyCisNIAAAAYSkN9Gd","expires_in":21599,"scope":"account_email profile","refresh_token_expires_in":5183999}
+{"id":1571779037,"connected_at":"2022-04-01T02:04:52Z","properties":{"nickname":"김승일","profile_image":"http://k.kakaocdn.net/dn/GVQjZ/btrBtDBRyvQ/x5OkBwErhIenbdAvEDFGnK/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/GVQjZ/btrBtDBRyvQ/x5OkBwErhIenbdAvEDFGnK/img_110x110.jpg"},"kakao_account":{"profile_needs_agreement":false,"profile":{"nickname":"김승일","thumbnail_image_url":"http://k.kakaocdn.net/dn/GVQjZ/btrBtDBRyvQ/x5OkBwErhIenbdAvEDFGnK/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/GVQjZ/btrBtDBRyvQ/x5OkBwErhIenbdAvEDFGnK/img_640x640.jpg","is_default_image":false},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"cadcom4817@gmail.com"}}
+============================================
+2022-11-23 20:20:32 쿼리 시작
+SELECT 
+MemId,
+MemIdx,
+NickName,
+Email,
+IsBiz 
+ FROM Tbl_Member 
+ WHERE 1=1 and 
+MemId='kakao1571779037'  
+
+Query 실행 시간 0.0051178932189941
+============================================
+
+============================================
+2022-11-23 20:20:33 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0036208629608154
+============================================
+
+============================================
+2022-11-23 20:20:33 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='2981' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0036411285400391
+============================================
+
+============================================
+2022-11-23 20:21:39 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0034828186035156
+============================================
+
+============================================
+2022-11-23 20:21:39 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0060830116271973
+============================================
+
+============================================
+2022-11-23 20:21:39 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0037131309509277
+============================================
+
+============================================
+2022-11-23 20:21:39 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='2981' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0028269290924072
+============================================
+
+============================================
+2022-11-23 20:21:39 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0037539005279541
+============================================
+
+============================================
+2022-11-23 20:21:40 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0040841102600098
+============================================
+
+============================================
+2022-11-23 20:21:41 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.004094123840332
+============================================
+
+============================================
+2022-11-23 20:21:41 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0044867992401123
+============================================
+
+============================================
+2022-11-23 20:21:41 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='2981' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0029928684234619
+============================================
+
+============================================
+2022-11-23 20:21:41 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0040228366851807
+============================================
+
+============================================
+2022-11-23 21:03:18 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0038430690765381
+============================================
+
+============================================
+2022-11-23 21:07:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.003547191619873
+============================================
+
+============================================
+2022-11-23 21:07:45 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0032429695129395
+============================================
+
+============================================
+2022-11-23 21:07:56 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0037918090820312
+============================================
+
+============================================
+2022-11-23 21:08:04 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0026121139526367
+============================================
+
+============================================
+2022-11-23 21:08:12 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0033459663391113
+============================================
+
+============================================
+2022-11-23 21:08:39 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0034019947052002
+============================================
+
+============================================
+2022-11-23 21:08:39 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0033049583435059
+============================================
+
+============================================
+2022-11-23 21:08:59 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0037250518798828
+============================================
+
+============================================
+2022-11-23 21:08:59 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0033218860626221
+============================================
+
+============================================
+2022-11-23 21:09:12 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0029680728912354
+============================================
+
+============================================
+2022-11-23 21:09:12 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0033581256866455
+============================================
+
+============================================
+2022-11-23 21:09:52 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0037410259246826
+============================================
+
+============================================
+2022-11-23 21:09:52 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0033671855926514
+============================================
+
+============================================
+2022-11-23 21:11:23 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0027918815612793
+============================================
+
+============================================
+2022-11-23 21:11:23 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0030250549316406
+============================================
+
+============================================
+2022-11-23 21:11:52 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0041751861572266
+============================================
+
+============================================
+2022-11-23 21:11:52 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0026500225067139
+============================================
+
+============================================
+2022-11-23 21:12:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0027949810028076
+============================================
+
+============================================
+2022-11-23 21:12:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0035469532012939
+============================================
+
+============================================
+2022-11-23 21:12:45 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.002687931060791
+============================================
+
+============================================
+2022-11-23 21:12:45 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0036110877990723
+============================================
+
+============================================
+2022-11-23 21:13:04 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0062379837036133
+============================================
+
+============================================
+2022-11-23 21:13:04 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0039880275726318
+============================================
+
+============================================
+2022-11-23 21:13:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0034091472625732
+============================================
+
+============================================
+2022-11-23 21:13:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.003018856048584
+============================================
+
+============================================
+2022-11-23 21:13:39 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0033600330352783
+============================================
+
+============================================
+2022-11-23 21:13:39 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0037240982055664
+============================================
+
+============================================
+2022-11-23 21:14:08 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0032000541687012
+============================================
+
+============================================
+2022-11-23 21:14:08 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0028541088104248
+============================================
+
+============================================
+2022-11-23 21:17:44 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.0031430721282959
+============================================
+
+============================================
+2022-11-23 21:17:44 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.0030717849731445
+============================================
+
+============================================
+2022-11-23 21:17:54 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20210806021559317'  
+
+Query 실행 시간 0.00351881980896
+============================================
+
+============================================
+2022-11-23 21:17:54 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='478'  
+
+Query 실행 시간 0.00313401222229
+============================================
+
+============================================
+2022-11-23 21:20:13 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.003633975982666
+============================================
+
+============================================
+2022-11-23 21:20:13 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0040011405944824
+============================================
+
+============================================
+2022-11-23 21:20:47 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033919811248779
+============================================
+
+============================================
+2022-11-23 21:20:47 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035338401794434
+============================================
+
+============================================
+2022-11-23 21:20:50 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0039398670196533
+============================================
+
+============================================
+2022-11-23 21:20:50 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.003558874130249
+============================================
+
+============================================
+2022-11-23 21:23:03 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0034739971160889
+============================================
+
+============================================
+2022-11-23 21:23:03 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0036900043487549
+============================================
+
+============================================
+2022-11-23 21:33:40 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030901432037354
+============================================
+
+============================================
+2022-11-23 21:33:40 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028059482574463
+============================================
+
+============================================
+2022-11-23 21:40:26 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0040738582611084
+============================================
+
+============================================
+2022-11-23 21:40:26 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026209354400635
+============================================
+
+============================================
+2022-11-23 21:41:29 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0040009021759033
+============================================
+
+============================================
+2022-11-23 21:41:29 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0047311782836914
+============================================
+
+============================================
+2022-11-23 21:42:10 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029089450836182
+============================================
+
+============================================
+2022-11-23 21:42:10 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029928684234619
+============================================
+
+============================================
+2022-11-23 21:47:01 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.003270149230957
+============================================
+
+============================================
+2022-11-23 21:47:01 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026299953460693
+============================================
+
+============================================
+2022-11-23 21:47:13 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030009746551514
+============================================
+
+============================================
+2022-11-23 21:47:13 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032830238342285
+============================================
+
+============================================
+2022-11-23 21:48:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032389163970947
+============================================
+
+============================================
+2022-11-23 21:48:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029969215393066
+============================================
+
+============================================
+2022-11-23 21:48:39 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029220581054688
+============================================
+
+============================================
+2022-11-23 21:48:39 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029819011688232
+============================================
+
+============================================
+2022-11-23 21:49:01 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035440921783447
+============================================
+
+============================================
+2022-11-23 21:49:01 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0037710666656494
+============================================
+
+============================================
+2022-11-23 21:50:49 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032098293304443
+============================================
+
+============================================
+2022-11-23 21:50:49 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0037918090820312
+============================================
+
+============================================
+2022-11-23 21:50:57 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032320022583008
+============================================
+
+============================================
+2022-11-23 21:50:57 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0033831596374512
+============================================
+
+============================================
+2022-11-23 21:51:04 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0040690898895264
+============================================
+
+============================================
+2022-11-23 21:51:04 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031609535217285
+============================================
+
+============================================
+2022-11-23 21:51:22 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0034260749816895
+============================================
+
+============================================
+2022-11-23 21:51:22 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='2981' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0050079822540283
+============================================
+
+============================================
+2022-11-23 21:51:36 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035929679870605
+============================================
+
+============================================
+2022-11-23 21:51:36 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0041711330413818
+============================================
+
+============================================
+2022-11-23 21:51:55 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030679702758789
+============================================
+
+============================================
+2022-11-23 21:51:56 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0030050277709961
+============================================
+
+============================================
+2022-11-23 21:52:03 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029089450836182
+============================================
+
+============================================
+2022-11-23 21:52:03 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0048367977142334
+============================================
+
+============================================
+2022-11-23 21:52:08 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0046150684356689
+============================================
+
+============================================
+2022-11-23 21:52:08 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.003223180770874
+============================================
+
+============================================
+2022-11-23 21:52:26 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0040891170501709
+============================================
+
+============================================
+2022-11-23 21:52:26 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0043439865112305
+============================================
+
+============================================
+2022-11-23 21:57:48 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035130977630615
+============================================
+
+============================================
+2022-11-23 21:57:48 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028560161590576
+============================================
+
+============================================
+2022-11-23 21:58:00 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0036180019378662
+============================================
+
+============================================
+2022-11-23 21:58:00 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026688575744629
+============================================
+
+============================================
+2022-11-23 21:59:31 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030868053436279
+============================================
+
+============================================
+2022-11-23 21:59:31 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029520988464355
+============================================
+
+============================================
+2022-11-23 21:59:54 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032920837402344
+============================================
+
+============================================
+2022-11-23 21:59:54 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031869411468506
+============================================
+
+============================================
+2022-11-23 21:59:57 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0034608840942383
+============================================
+
+============================================
+2022-11-23 21:59:57 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0046460628509521
+============================================
+
+============================================
+2022-11-23 22:00:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0031850337982178
+============================================
+
+============================================
+2022-11-23 22:00:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029690265655518
+============================================
+
+============================================
+2022-11-23 22:00:27 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0027971267700195
+============================================
+
+============================================
+2022-11-23 22:00:27 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026800632476807
+============================================
+
+============================================
+2022-11-23 22:00:59 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033409595489502
+============================================
+
+============================================
+2022-11-23 22:00:59 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0034058094024658
+============================================
+
+============================================
+2022-11-23 22:01:26 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0034840106964111
+============================================
+
+============================================
+2022-11-23 22:01:26 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035898685455322
+============================================
+
+============================================
+2022-11-23 22:02:31 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030241012573242
+============================================
+
+============================================
+2022-11-23 22:02:31 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0033550262451172
+============================================
+
+============================================
+2022-11-23 22:02:47 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.003026008605957
+============================================
+
+============================================
+2022-11-23 22:02:47 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0048210620880127
+============================================
+
+============================================
+2022-11-23 22:03:40 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0028409957885742
+============================================
+
+============================================
+2022-11-23 22:03:40 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0042212009429932
+============================================
+
+============================================
+2022-11-23 22:03:45 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0037858486175537
+============================================
+
+============================================
+2022-11-23 22:03:45 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.003654956817627
+============================================
+
+============================================
+2022-11-23 22:03:50 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0037789344787598
+============================================
+
+============================================
+2022-11-23 22:03:50 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0043368339538574
+============================================
+
+============================================
+2022-11-23 22:04:01 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0036239624023438
+============================================
+
+============================================
+2022-11-23 22:04:01 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0036110877990723
+============================================
+
+============================================
+2022-11-23 22:04:04 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0034239292144775
+============================================
+
+============================================
+2022-11-23 22:04:04 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026679039001465
+============================================
+
+============================================
+2022-11-23 22:04:14 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0041649341583252
+============================================
+
+============================================
+2022-11-23 22:04:14 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028359889984131
+============================================
+
+============================================
+2022-11-23 22:04:19 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0028388500213623
+============================================
+
+============================================
+2022-11-23 22:04:19 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035557746887207
+============================================
+
+============================================
+2022-11-23 22:12:42 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0036869049072266
+============================================
+
+============================================
+2022-11-23 22:12:42 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035400390625
+============================================
+
+============================================
+2022-11-23 22:12:50 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033638477325439
+============================================
+
+============================================
+2022-11-23 22:12:50 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031538009643555
+============================================
+
+============================================
+2022-11-23 22:14:12 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0049901008605957
+============================================
+
+============================================
+2022-11-23 22:14:12 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028409957885742
+============================================
+
+============================================
+2022-11-23 22:15:29 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0037930011749268
+============================================
+
+============================================
+2022-11-23 22:15:29 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031421184539795
+============================================
+
+============================================
+2022-11-23 22:15:44 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0038368701934814
+============================================
+
+============================================
+2022-11-23 22:15:44 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032460689544678
+============================================
+
+============================================
+2022-11-23 22:16:01 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0047500133514404
+============================================
+
+============================================
+2022-11-23 22:16:01 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029149055480957
+============================================
+
+============================================
+2022-11-23 22:16:19 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0059499740600586
+============================================
+
+============================================
+2022-11-23 22:16:19 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0056450366973877
+============================================
+
+============================================
+2022-11-23 22:18:44 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0036749839782715
+============================================
+
+============================================
+2022-11-23 22:18:44 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0041310787200928
+============================================
+
+============================================
+2022-11-23 22:27:08 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035560131072998
+============================================
+
+============================================
+2022-11-23 22:27:08 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0030961036682129
+============================================
+
+============================================
+2022-11-23 22:27:59 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029771327972412
+============================================
+
+============================================
+2022-11-23 22:27:59 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.003126859664917
+============================================
+
+============================================
+2022-11-23 22:28:19 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.002439022064209
+============================================
+
+============================================
+2022-11-23 22:28:19 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0025720596313477
+============================================
+
+============================================
+2022-11-23 22:28:33 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0028870105743408
+============================================
+
+============================================
+2022-11-23 22:28:33 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0024151802062988
+============================================
+
+============================================
+2022-11-23 22:28:43 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0026938915252686
+============================================
+
+============================================
+2022-11-23 22:28:44 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032281875610352
+============================================
+
+============================================
+2022-11-23 22:28:47 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0027108192443848
+============================================
+
+============================================
+2022-11-23 22:28:47 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026640892028809
+============================================
+
+============================================
+2022-11-23 22:28:53 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032601356506348
+============================================
+
+============================================
+2022-11-23 22:28:53 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0037639141082764
+============================================
+
+============================================
+2022-11-23 22:29:00 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033559799194336
+============================================
+
+============================================
+2022-11-23 22:29:00 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0025680065155029
+============================================
+
+============================================
+2022-11-23 22:29:28 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0049188137054443
+============================================
+
+============================================
+2022-11-23 22:29:28 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028541088104248
+============================================
+
+============================================
+2022-11-23 22:29:49 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0030698776245117
+============================================
+
+============================================
+2022-11-23 22:29:49 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0030031204223633
+============================================
+
+============================================
+2022-11-23 22:30:12 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033531188964844
+============================================
+
+============================================
+2022-11-23 22:30:12 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032479763031006
+============================================
+
+============================================
+2022-11-23 22:30:27 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033919811248779
+============================================
+
+============================================
+2022-11-23 22:30:27 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0036029815673828
+============================================
+
+============================================
+2022-11-23 22:30:55 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0037500858306885
+============================================
+
+============================================
+2022-11-23 22:30:55 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031731128692627
+============================================
+
+============================================
+2022-11-23 22:31:05 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032980442047119
+============================================
+
+============================================
+2022-11-23 22:31:05 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031001567840576
+============================================
+
+============================================
+2022-11-23 22:31:17 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0034329891204834
+============================================
+
+============================================
+2022-11-23 22:31:17 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029430389404297
+============================================
+
+============================================
+2022-11-23 22:31:21 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033869743347168
+============================================
+
+============================================
+2022-11-23 22:31:21 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0033998489379883
+============================================
+
+============================================
+2022-11-23 22:31:34 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0038299560546875
+============================================
+
+============================================
+2022-11-23 22:31:34 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0039210319519043
+============================================
+
+============================================
+2022-11-23 22:32:02 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032219886779785
+============================================
+
+============================================
+2022-11-23 22:32:02 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035378932952881
+============================================
+
+============================================
+2022-11-23 22:32:10 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029821395874023
+============================================
+
+============================================
+2022-11-23 22:32:10 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.002418041229248
+============================================
+
+============================================
+2022-11-23 22:34:14 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029120445251465
+============================================
+
+============================================
+2022-11-23 22:34:14 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0024278163909912
+============================================
+
+============================================
+2022-11-23 22:34:43 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032451152801514
+============================================
+
+============================================
+2022-11-23 22:34:43 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0027539730072021
+============================================
+
+============================================
+2022-11-23 22:35:05 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0038001537322998
+============================================
+
+============================================
+2022-11-23 22:35:05 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0029318332672119
+============================================
+
+============================================
+2022-11-23 22:35:25 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033421516418457
+============================================
+
+============================================
+2022-11-23 22:35:25 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032339096069336
+============================================
+
+============================================
+2022-11-23 22:35:56 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0025649070739746
+============================================
+
+============================================
+2022-11-23 22:35:56 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0025429725646973
+============================================
+
+============================================
+2022-11-23 22:36:13 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0031130313873291
+============================================
+
+============================================
+2022-11-23 22:36:13 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0044901371002197
+============================================
+
+============================================
+2022-11-23 22:36:19 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029590129852295
+============================================
+
+============================================
+2022-11-23 22:36:19 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0034651756286621
+============================================
+
+============================================
+2022-11-23 22:36:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032889842987061
+============================================
+
+============================================
+2022-11-23 22:36:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0031709671020508
+============================================
+
+============================================
+2022-11-23 22:36:31 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032570362091064
+============================================
+
+============================================
+2022-11-23 22:36:31 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0041007995605469
+============================================
+
+============================================
+2022-11-23 22:37:10 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035390853881836
+============================================
+
+============================================
+2022-11-23 22:37:10 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0028729438781738
+============================================
+
+============================================
+2022-11-23 22:40:57 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.003648042678833
+============================================
+
+============================================
+2022-11-23 22:40:57 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0036821365356445
+============================================
+
+============================================
+2022-11-23 22:41:24 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0035970211029053
+============================================
+
+============================================
+2022-11-23 22:41:24 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0024631023406982
+============================================
+
+============================================
+2022-11-23 22:51:19 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0033049583435059
+============================================
+
+============================================
+2022-11-23 22:51:19 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0030961036682129
+============================================
+
+============================================
+2022-11-23 22:51:42 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0043680667877197
+============================================
+
+============================================
+2022-11-23 22:51:42 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035560131072998
+============================================
+
+============================================
+2022-11-23 22:51:49 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0038108825683594
+============================================
+
+============================================
+2022-11-23 22:51:49 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0030150413513184
+============================================
+
+============================================
+2022-11-23 22:51:54 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0028469562530518
+============================================
+
+============================================
+2022-11-23 22:51:54 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026459693908691
+============================================
+
+============================================
+2022-11-23 22:51:56 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0036351680755615
+============================================
+
+============================================
+2022-11-23 22:51:56 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.002957820892334
+============================================
+
+============================================
+2022-11-23 22:52:11 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0038719177246094
+============================================
+
+============================================
+2022-11-23 22:52:11 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.003399133682251
+============================================
+
+============================================
+2022-11-23 22:53:46 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0027439594268799
+============================================
+
+============================================
+2022-11-23 22:53:46 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0026319026947021
+============================================
+
+============================================
+2022-11-23 22:54:09 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032281875610352
+============================================
+
+============================================
+2022-11-23 22:54:09 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0027658939361572
+============================================
+
+============================================
+2022-11-23 22:54:22 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0049629211425781
+============================================
+
+============================================
+2022-11-23 22:54:22 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0035820007324219
+============================================
+
+============================================
+2022-11-23 22:54:30 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0029768943786621
+============================================
+
+============================================
+2022-11-23 22:54:30 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0036509037017822
+============================================
+
+============================================
+2022-11-23 22:54:52 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick 
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+ WHERE 1=1 and 
+SaleNo='20221123211957922'  
+
+Query 실행 시간 0.0032870769500732
+============================================
+
+============================================
+2022-11-23 22:54:52 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='487'  
+
+Query 실행 시간 0.0032491683959961
+============================================
+

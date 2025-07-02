@@ -1,0 +1,24 @@
+<!--
+<div class="row bg-light pt-2" >
+ <div class="col col-6 text-center"><a href="#!" class="text-dark">이용약관</a></div>
+ <div class="col col-6 text-center"><a href="#!" class="text-dark">개인정보처리방침</a></div>
+</div>
+-->
+
+<div class="row bg-light pt-2" >
+ <hr class="sidebar-divider">
+ <div class="col">(주)노도시&nbsp;대표 송준호</div>
+</div>
+<div class="row bg-light">
+ <div class="col">주소 : 인천시 서구 연희로 6</div>
+</div>
+<div class="row bg-light">
+ <div class="col">사업자등록번호 : 970-86-02202</div>
+</div>
+<div class="row bg-light text-center" >
+ <a class="text-dark" href="https://www.nodosi.co.kr/">© 2021 Copyright (주)노도시</a>
+</div>
+
+</div>
+</body>
+</html>

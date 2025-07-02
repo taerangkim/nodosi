@@ -1,0 +1,413 @@
+============================================
+2022-12-07 00:00:10 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0022728443145752
+============================================
+
+============================================
+2022-12-07 00:00:10 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0023369789123535
+============================================
+
+============================================
+2022-12-07 00:00:10 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0030100345611572
+============================================
+
+============================================
+2022-12-07 00:00:10 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0029780864715576
+============================================
+
+============================================
+2022-12-07 00:00:12 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0053069591522217
+============================================
+
+============================================
+2022-12-07 00:00:12 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0032260417938232
+============================================
+
+============================================
+2022-12-07 00:00:12 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0040199756622314
+============================================
+
+============================================
+2022-12-07 00:00:12 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0033020973205566
+============================================
+
+============================================
+2022-12-07 00:01:05 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0024969577789307
+============================================
+
+============================================
+2022-12-07 00:01:05 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0032999515533447
+============================================
+
+============================================
+2022-12-07 00:01:05 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0034937858581543
+============================================
+
+============================================
+2022-12-07 00:01:05 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0033271312713623
+============================================
+
+============================================
+2022-12-07 00:01:18 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0032970905303955
+============================================
+
+============================================
+2022-12-07 00:01:18 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0023610591888428
+============================================
+
+============================================
+2022-12-07 00:01:18 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0031440258026123
+============================================
+
+============================================
+2022-12-07 00:01:18 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0031538009643555
+============================================
+
+============================================
+2022-12-07 00:01:41 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0035688877105713
+============================================
+
+============================================
+2022-12-07 00:01:41 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0024919509887695
+============================================
+
+============================================
+2022-12-07 00:01:41 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0027308464050293
+============================================
+
+============================================
+2022-12-07 00:01:41 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0025520324707031
+============================================
+
+============================================
+2022-12-07 00:01:52 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0024740695953369
+============================================
+
+============================================
+2022-12-07 00:01:52 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.002439022064209
+============================================
+
+============================================
+2022-12-07 00:01:52 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0027709007263184
+============================================
+
+============================================
+2022-12-07 00:01:52 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0037860870361328
+============================================
+
+============================================
+2022-12-07 00:02:46 쿼리 시작
+SELECT 
+right(NoMemCallNum, 4) as TelNum,
+right(NoMemCallNum, 6) as DispTelNum,
+NoMemCallNum 
+ FROM Tbl_Wait as S 
+ WHERE 1=1 and 
+WaitIdx='184'  
+
+Query 실행 시간 0.0029079914093018
+============================================
+
+============================================
+2022-12-07 00:02:46 쿼리 시작
+SELECT 
+ B.BizName 
+ FROM Tbl_BizTel  AS bt 
+INNER JOIN Tbl_BizInfo AS B ON bt.BIdx = B.BIdx 
+ WHERE 1=1 and 
+REPLACE(bt.TelNum, '-', '')='01036860093'  
+
+Query 실행 시간 0.0025918483734131
+============================================
+
+============================================
+2022-12-07 00:02:46 쿼리 시작
+SELECT 
+S.*,
+CC1.ComName as PayType,
+IFNULL(M.NickName, '현장판매') as MemNick,
+CASE WHEN O.OIdx > 0 THEN 50000 ELSE '0' END as ResevePrice  
+ FROM Tbl_Sale as S 
+INNER JOIN Tbl_ComCode AS CC1 ON S.PayType = CC1.ComCode 
+LEFT JOIN Tbl_Member AS M on S.MemIdx = M.MemIdx 
+LEFT join Tbl_Order as O on S.ReseveOidx = O.OIdx and O.CalculationCheck='Y' 
+ WHERE 1=1 and 
+SaleNo='20221201193349849'  
+
+Query 실행 시간 0.0029211044311523
+============================================
+
+============================================
+2022-12-07 00:02:46 쿼리 시작
+SELECT 
+SP.*,
+CC.ComName AS FishName,
+CC1.ComName AS ProdName,
+CC2.ComName AS OrgName 
+ FROM Tbl_SaleProduct AS SP 
+INNER JOIN Tbl_ComCode AS CC ON SP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON SP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_ComCode AS CC2 ON SP.OriginCode = CC2.ComCode 
+ WHERE 1=1 and 
+SIdx='488'  
+
+Query 실행 시간 0.0033178329467773
+============================================
+

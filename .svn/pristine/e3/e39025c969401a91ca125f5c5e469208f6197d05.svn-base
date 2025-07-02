@@ -1,0 +1,217 @@
+<link rel="stylesheet" href="/css/jquery.fileupload.css">
+<link rel="stylesheet" href="/css/jquery.fileupload-ui.css">
+<script type="text/javascript">
+    function fileUpload()
+    {
+        $("#fileModal").modal('show');
+    }
+    function fileClose()
+    {
+        $("#fileModal").modal('hide');
+    }
+
+    function setnick()
+    {
+        if ($("#nickname").val() == '')
+        {
+            alert("설정하실 이름을 지정하여 주시기 바랍니다.");
+            return false;
+        }
+        $("#frm").submit();
+    }
+    function logout()
+    {
+        document.location.href="/login/logout"
+    }
+    function joinout()
+    {
+        document.location.href="/kakao/unlink"
+    }
+    function fileComplete()
+    {
+        $("#Image_container").empty();
+        $.each(uploadFile, function (index, item) {
+            console.log(item.url);
+            html = '<div class="col col-3 pb-2"><img src="' + item.thumbnailUrl + '" class="img-thumbnail"></div>';
+            $("#Image_container").append(html)
+        });
+        $("#fileModal").modal('hide');
+    }
+    $('#fileupload').fileupload({
+        url: '/review/file',
+        done: function (e, data) {
+            // console.log(data.result);
+            //console.log(data.result.files);
+            console.log(data.result.files[0]['ImgIdx']);
+            uploadFile.push(data.result.files[0]);
+        },
+    });
+</script>
+
+<div class="row bg-secondary p-2">
+    <p class='p-2 h6  font-weight-bold text-light'><i class="fas fa-bell"></i> 내정보</p>
+</div>
+<form method="post" action="/my/setnickname" id="frm" name="frm">
+
+<div class="row p-3" style="background-color: #e0e0e0">
+    <div class='col col-2 pt-2 h6 font-weight-bold text-black text-center'>이름</div>
+    <div class="col col-7">
+        <input type="text" class="form-control form-control-sm" name="nickname" id="nickname"  autocomplete="off" placeholder="최대 5글자" maxlength="5" value="{{$NickName}}" @if ($NickName != '') readonly disabled @endif>
+    </div>
+    @if ($NickName == '')
+    <div class="col col-3">
+        <button type="button" class="btn btn-sm btn-primary" class="btn" onclick="setnick()">저장</button>
+    </div>
+    @endif
+</div>
+</form>
+<hr class="sidebar-divider">
+<div class="row p-2">
+    <button type="button" class="btn btn-block btn-primary" onclick="logout()">로그아웃</button>
+</div>
+<hr class="sidebar-divider">
+<div class="row p-2">
+    <button type="button" class="btn btn-block btn-danger" onclick="joinout()">탈퇴</button>
+</div>
+<div class="modal" id="fileModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-light" id="menuModalTitle">파일 업로드</h5>
+            </div>
+            <div class="modal-body">
+                <form id="fileupload"  action="https://jquery-file-upload.appspot.com/"  method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="uploadpath" id="uploadpath" value="/94">
+                    <div class="row fileupload-buttonbar">
+                        <div class="col">
+                            <span class="btn btn-success fileinput-button">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>파일 추가</span>
+                                <input type="file" name="files[]" multiple />
+                            </span>
+                            <button type="submit" class="btn btn-primary start">
+                                <i class="glyphicon glyphicon-upload"></i>
+                                <span>업로드 시작</span>
+                            </button>
+                            <button type="reset" class="btn btn-warning cancel">
+                                <i class="glyphicon glyphicon-ban-circle"></i>
+                                <span>업로드 취소</span>
+                            </button>
+                            <button type="button" class="btn btn-danger delete">
+                                <i class="glyphicon glyphicon-trash"></i>
+                                <span>선택 파일 삭제</span>
+                            </button>
+                            <input type="checkbox" class="toggle" />
+                            <span class="fileupload-process"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col fileupload-progress fade">
+                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar progress-bar-success" style="width: 0%;"></div>
+                            </div>
+                            <div class="progress-extended">&nbsp;</div>
+                        </div>
+                    </div>
+                    <table role="presentation" class="table table-striped">
+                        <tbody class="files"></tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="fileClose();">취소</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="fileComplete();">완료</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="template-upload" type="text/x-tmpl">
+  {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-upload fade{%=o.options.loadImageFileTypes.test(file.type)?' image in':''%}">
+          <td>
+              <span class="preview"></span>
+          </td>
+          <td>
+              <p class="name">{%=file.name%}</p>
+              <strong class="error text-danger"></strong>
+          </td>
+          <td>
+              <p class="size">Processing...</p>
+              <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+          </td>
+          <td>
+              {% if (!o.options.autoUpload && o.options.edit && o.options.loadImageFileTypes.test(file.type)) { %}
+                <button class="btn btn-success edit btn-sm" data-index="{%=i%}" disabled>
+                    <i class="glyphicon glyphicon-edit "></i>
+                    Edit
+                </button>
+              {% } %}
+              {% if (!i && !o.options.autoUpload) { %}
+                  <button class="btn btn-primary start btn-sm" disabled>
+                      <i class="glyphicon glyphicon-upload"></i>
+                      업로드
+                  </button>
+              {% } %}
+              {% if (!i) { %}
+                  <button class="btn btn-warning cancel btn-sm">
+                      <i class="glyphicon glyphicon-ban-circle"></i>
+                      취소
+                  </button>
+              {% } %}
+          </td>
+      </tr>
+  {% } %}
+</script>
+<script id="template-download" type="text/x-tmpl">
+  {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-download fade{%=file.thumbnailUrl?' image':''%}">
+          <td>
+              <span class="preview">
+                  {% if (file.thumbnailUrl) { %}
+                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                  {% } %}
+              </span>
+          </td>
+          <td>
+              <p class="name">
+                  {% if (file.url) { %}
+                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                  {% } else { %}
+                      <span>{%=file.name%}</span>
+                  {% } %}
+              </p>
+              {% if (file.error) { %}
+                  <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+              {% } %}
+          </td>
+          <td>
+              <span class="size">{%=o.formatFileSize(file.size)%}</span>
+          </td>
+          <td>
+              {% if (file.deleteUrl) { %}
+                  <button class="btn btn-danger btn-sm delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                      <i class="glyphicon glyphicon-trash"></i>
+                      삭제
+                  </button>
+                  <input type="checkbox" name="delete" value="1" class="toggle">
+              {% } else { %}
+                  <button class="btn btn-warning cancel btn-sm">
+                      <i class="glyphicon glyphicon-ban-circle"></i>
+                      Cancel
+                  </button>
+              {% } %}
+          </td>
+      </tr>
+  {% } %}
+</script>
+
+<script src="/js/upload/jquery.ui.widget.js"></script>
+<script src="/js/upload/tmpl.min.js"></script>
+<script src="/js/upload/load-image.all.min.js"></script>
+<script src="/js/upload/canvas-to-blob.min.js"></script>
+<script src="/js/upload/jquery.blueimp-gallery.min.js"></script>
+<script src="/js/upload/jquery.fileupload.js?c=<?=date('Ymdmsi')?>"></script>
+<script src="/js/upload/jquery.fileupload-process.js"></script>
+<script src="/js/upload/jquery.fileupload-image.js"></script>
+<script src="/js/upload/jquery.fileupload-validate.js"></script>
+<script src="/js/upload/jquery.fileupload-ui.js?c=<?=date('Ymdmsi')?>"></script>

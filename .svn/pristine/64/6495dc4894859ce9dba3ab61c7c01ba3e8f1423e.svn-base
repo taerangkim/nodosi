@@ -1,0 +1,2015 @@
+============================================
+2021-08-11 18:22:30 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027530193328857
+============================================
+
+============================================
+2021-08-11 18:22:30 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0043132305145264
+============================================
+
+============================================
+2021-08-11 18:22:30 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0036380290985107
+============================================
+
+============================================
+2021-08-11 18:22:30 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0042212009429932
+============================================
+
+============================================
+2021-08-11 18:22:31 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031411647796631
+============================================
+
+============================================
+2021-08-11 18:22:31 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0032401084899902
+============================================
+
+============================================
+2021-08-11 18:22:31 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.003154993057251
+============================================
+
+============================================
+2021-08-11 18:22:31 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041840076446533
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0046179294586182
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.003324031829834
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0034811496734619
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0034899711608887
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0032460689544678
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0033061504364014
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0032949447631836
+============================================
+
+============================================
+2021-08-11 18:22:50 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0039470195770264
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0023829936981201
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0038340091705322
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0034759044647217
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.003777027130127
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027048587799072
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.003715991973877
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0029811859130859
+============================================
+
+============================================
+2021-08-11 18:23:35 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0036740303039551
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0028409957885742
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0029909610748291
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0027930736541748
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0032041072845459
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0035390853881836
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.003162145614624
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0047760009765625
+============================================
+
+============================================
+2021-08-11 18:24:06 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0029211044311523
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027599334716797
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0038449764251709
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0029819011688232
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0035669803619385
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0032520294189453
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0035059452056885
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0032730102539062
+============================================
+
+============================================
+2021-08-11 18:25:23 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0031518936157227
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0047459602355957
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036141872406006
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0032930374145508
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0036039352416992
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027461051940918
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0034980773925781
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0028889179229736
+============================================
+
+============================================
+2021-08-11 18:25:46 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.009329080581665
+============================================
+
+============================================
+2021-08-11 18:25:54 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0044770240783691
+============================================
+
+============================================
+2021-08-11 18:25:54 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0034739971160889
+============================================
+
+============================================
+2021-08-11 18:25:54 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0033509731292725
+============================================
+
+============================================
+2021-08-11 18:25:54 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0038599967956543
+============================================
+
+============================================
+2021-08-11 18:26:17 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030930042266846
+============================================
+
+============================================
+2021-08-11 18:26:17 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.00341796875
+============================================
+
+============================================
+2021-08-11 18:26:17 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0032281875610352
+============================================
+
+============================================
+2021-08-11 18:26:17 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0046989917755127
+============================================
+
+============================================
+2021-08-11 18:36:15 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027709007263184
+============================================
+
+============================================
+2021-08-11 18:36:15 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036499500274658
+============================================
+
+============================================
+2021-08-11 18:36:15 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.002946138381958
+============================================
+
+============================================
+2021-08-11 18:36:15 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0028688907623291
+============================================
+
+============================================
+2021-08-11 18:36:44 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029799938201904
+============================================
+
+============================================
+2021-08-11 18:36:44 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036051273345947
+============================================
+
+============================================
+2021-08-11 18:36:44 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0032398700714111
+============================================
+
+============================================
+2021-08-11 18:36:44 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0037541389465332
+============================================
+
+============================================
+2021-08-11 18:37:08 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027410984039307
+============================================
+
+============================================
+2021-08-11 18:37:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036849975585938
+============================================
+
+============================================
+2021-08-11 18:37:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0029590129852295
+============================================
+
+============================================
+2021-08-11 18:37:08 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0037949085235596
+============================================
+
+============================================
+2021-08-11 18:37:23 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029358863830566
+============================================
+
+============================================
+2021-08-11 18:37:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0034990310668945
+============================================
+
+============================================
+2021-08-11 18:37:23 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0037429332733154
+============================================
+
+============================================
+2021-08-11 18:37:23 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0050709247589111
+============================================
+
+============================================
+2021-08-11 18:38:33 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030150413513184
+============================================
+
+============================================
+2021-08-11 18:38:33 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0033321380615234
+============================================
+
+============================================
+2021-08-11 18:38:33 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0035800933837891
+============================================
+
+============================================
+2021-08-11 18:38:33 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0031740665435791
+============================================
+
+============================================
+2021-08-11 18:38:45 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0033810138702393
+============================================
+
+============================================
+2021-08-11 18:38:45 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036227703094482
+============================================
+
+============================================
+2021-08-11 18:38:45 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0034651756286621
+============================================
+
+============================================
+2021-08-11 18:38:45 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0051350593566895
+============================================
+
+============================================
+2021-08-11 18:39:00 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0039970874786377
+============================================
+
+============================================
+2021-08-11 18:39:00 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0080578327178955
+============================================
+
+============================================
+2021-08-11 18:39:00 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0067009925842285
+============================================
+
+============================================
+2021-08-11 18:39:00 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0048420429229736
+============================================
+
+============================================
+2021-08-11 18:39:19 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029950141906738
+============================================
+
+============================================
+2021-08-11 18:39:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.004072904586792
+============================================
+
+============================================
+2021-08-11 18:39:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0026650428771973
+============================================
+
+============================================
+2021-08-11 18:39:19 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.003324031829834
+============================================
+
+============================================
+2021-08-11 18:39:35 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027999877929688
+============================================
+
+============================================
+2021-08-11 18:39:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0033748149871826
+============================================
+
+============================================
+2021-08-11 18:39:35 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0027468204498291
+============================================
+
+============================================
+2021-08-11 18:39:35 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041310787200928
+============================================
+
+============================================
+2021-08-11 18:40:37 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0041418075561523
+============================================
+
+============================================
+2021-08-11 18:40:37 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0029721260070801
+============================================
+
+============================================
+2021-08-11 18:40:37 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0027477741241455
+============================================
+
+============================================
+2021-08-11 18:40:37 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0035929679870605
+============================================
+
+============================================
+2021-08-11 18:40:50 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031728744506836
+============================================
+
+============================================
+2021-08-11 18:40:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0028190612792969
+============================================
+
+============================================
+2021-08-11 18:40:50 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0026521682739258
+============================================
+
+============================================
+2021-08-11 18:40:50 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.00337815284729
+============================================
+
+============================================
+2021-08-11 18:41:31 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0034050941467285
+============================================
+
+============================================
+2021-08-11 18:41:31 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0032761096954346
+============================================
+
+============================================
+2021-08-11 18:41:31 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.003770112991333
+============================================
+
+============================================
+2021-08-11 18:41:31 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0037920475006104
+============================================
+
+============================================
+2021-08-11 18:42:12 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0033919811248779
+============================================
+
+============================================
+2021-08-11 18:42:12 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0029151439666748
+============================================
+
+============================================
+2021-08-11 18:42:12 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0026798248291016
+============================================
+
+============================================
+2021-08-11 18:42:12 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0034410953521729
+============================================
+
+============================================
+2021-08-11 18:42:19 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0024740695953369
+============================================
+
+============================================
+2021-08-11 18:42:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0032620429992676
+============================================
+
+============================================
+2021-08-11 18:42:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0030999183654785
+============================================
+
+============================================
+2021-08-11 18:42:19 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0039730072021484
+============================================
+
+============================================
+2021-08-11 18:57:09 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030438899993896
+============================================
+
+============================================
+2021-08-11 18:57:09 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.005742073059082
+============================================
+
+============================================
+2021-08-11 18:57:09 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0034539699554443
+============================================
+
+============================================
+2021-08-11 18:57:09 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0031321048736572
+============================================
+
+============================================
+2021-08-11 18:57:53 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0026500225067139
+============================================
+
+============================================
+2021-08-11 18:57:53 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0035800933837891
+============================================
+
+============================================
+2021-08-11 18:57:53 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0028841495513916
+============================================
+
+============================================
+2021-08-11 18:57:53 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0032567977905273
+============================================
+
+============================================
+2021-08-11 18:58:21 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0026829242706299
+============================================
+
+============================================
+2021-08-11 18:58:21 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0031559467315674
+============================================
+
+============================================
+2021-08-11 18:58:21 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0033679008483887
+============================================
+
+============================================
+2021-08-11 18:58:21 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0042369365692139
+============================================
+

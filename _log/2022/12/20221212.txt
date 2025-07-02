@@ -1,0 +1,788 @@
+============================================
+2022-12-12 20:21:17 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0033879280090332
+============================================
+
+============================================
+2022-12-12 20:21:17 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0037479400634766
+============================================
+
+============================================
+2022-12-12 20:21:17 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.004741907119751
+============================================
+
+============================================
+2022-12-12 20:21:17 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041561126708984
+============================================
+
+============================================
+2022-12-12 20:21:19 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0044360160827637
+============================================
+
+============================================
+2022-12-12 20:21:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.003978967666626
+============================================
+
+============================================
+2022-12-12 20:21:19 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0036430358886719
+============================================
+
+============================================
+2022-12-12 20:21:19 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0045928955078125
+============================================
+
+============================================
+2022-12-12 20:22:55 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030641555786133
+============================================
+
+============================================
+2022-12-12 20:22:55 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0037901401519775
+============================================
+
+============================================
+2022-12-12 20:22:55 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0082409381866455
+============================================
+
+============================================
+2022-12-12 20:22:55 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041251182556152
+============================================
+
+============================================
+2022-12-12 21:09:55 쿼리 시작
+SELECT 
+TelNum 
+ FROM Tbl_BizTel 
+ WHERE 1=1 and 
+TelNum='01077517244'  
+
+Query 실행 시간 0.0036990642547607
+============================================
+
+============================================
+2022-12-12 21:10:03 쿼리 시작
+SELECT 
+TelNum 
+ FROM Tbl_Order 
+ WHERE 1=1 and RegDatm='20221212' and 
+TelNum='01077517244'  
+
+Query 실행 시간 0.0033130645751953
+============================================
+
+============================================
+2022-12-12 21:10:03 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0026800632476807
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('2','2','20221212','01077517244','02')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212211003','20221212211003','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 2번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 21:11:16 쿼리 시작
+SELECT 
+TelNum 
+ FROM Tbl_BizTel 
+ WHERE 1=1 and 
+TelNum='01077517244'  
+
+Query 실행 시간 0.0050029754638672
+============================================
+
+============================================
+2022-12-12 21:11:23 쿼리 시작
+SELECT 
+TelNum 
+ FROM Tbl_Order 
+ WHERE 1=1 and RegDatm='20221212' and 
+TelNum='01077517244'  
+
+Query 실행 시간 0.00372314453125
+============================================
+
+============================================
+2022-12-12 21:11:23 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0030491352081299
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('3','3','20221212','01077517244','02')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212211123','20221212211123','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 3번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:53:04 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0097098350524902
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('4','4','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225304','20221212225304','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 4번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:54:01 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0042910575866699
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('5','5','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225401','20221212225401','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 5번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:54:09 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0032639503479004
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('6','6','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225409','20221212225409','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 6번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:54:57 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.002493143081665
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('7','7','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225457','20221212225457','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 7번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:55:02 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0033998489379883
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('8','8','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225502','20221212225502','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 8번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:55:25 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0031120777130127
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('9','9','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225525','20221212225525','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 9번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:56:09 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0036699771881104
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('10','10','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225609','20221212225609','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 10번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:56:53 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0032608509063721
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('11','11','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225653','20221212225653','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 11번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:58:24 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.002377986907959
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('12','12','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225824','20221212225824','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 12번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:58:54 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0025899410247803
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('13','13','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225854','20221212225854','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 13번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 22:59:47 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0028159618377686
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('14','14','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212225947','20221212225947','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 14번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 23:00:04 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0045950412750244
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('15','15','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212230004','20221212230004','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 15번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 23:14:36 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0025639533996582
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('16','16','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212231436','20221212231436','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 16번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 23:18:05 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0027229785919189
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('17','17','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212231805','20221212231805','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 17번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0057060718536377
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036461353302002
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.003809928894043
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0039680004119873
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0037109851837158
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0038180351257324
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0039529800415039
+============================================
+
+============================================
+2022-12-12 23:18:08 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0040669441223145
+============================================
+
+============================================
+2022-12-12 23:18:45 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221212'  
+
+Query 실행 시간 0.0072929859161377
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('18','18','20221212','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 12일일 대기자 접수 안내','20221212231845','20221212231845','0222547093','0','^01077517244','12월 12일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 18번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-12 23:18:46 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029349327087402
+============================================
+
+============================================
+2022-12-12 23:18:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0039210319519043
+============================================
+
+============================================
+2022-12-12 23:18:46 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0038759708404541
+============================================
+
+============================================
+2022-12-12 23:18:46 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0059349536895752
+============================================
+
+============================================
+2022-12-12 23:18:47 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.002863883972168
+============================================
+
+============================================
+2022-12-12 23:18:47 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0041849613189697
+============================================
+
+============================================
+2022-12-12 23:18:47 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0035970211029053
+============================================
+
+============================================
+2022-12-12 23:18:47 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0093560218811035
+============================================
+

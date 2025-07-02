@@ -1,0 +1,154 @@
+<div class="container" style="background-color: #e0e0e0">
+    <div class="row">
+        <p></p>
+        <div class="col col-4">
+            <select class="form-control form-control-sm">
+                <option>품목</option>
+                <option>광어</option>
+                <option>우럭</option>
+            </select>
+        </div>
+        <div class="col col-4">
+            <select class="form-control form-control-sm">
+                <option>산지정보</option>
+                <option>제주도 자연산</option>
+                <option>통영 양식</option>
+            </select>
+        </div>
+        <div class="col col-4"><button type="submit" class="form-control" class="btn" style="font-size: small">검색</button></div>
+    </div>
+    <p></p>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title" style="font-size: small  ">
+                <div class="row">
+                    <div class="col col-4" style="font-weight:bold;text-align: center">
+                        <img src="/img/fish/광어.jpg"  class="w-100"><p></p>
+                        광어 (자연산)<p></p>
+                        <button type="submit" class="form-control" class="btn" style="font-size: small" onclick="document.location.href='/deal/makedealstep1'">딜 생성</button>
+                    </div>
+                    <div class="col col-8"><canvas class="my-4" id="myChart" class="h-100"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title" style="font-size: small  ">
+                <div class="row">
+                    <div class="col col-4" style="font-weight:bold;text-align: center">
+                        <img src="/img/fish/광어.jpg"  class="w-100"><p></p>
+                        광어 (자연산)<p></p>
+                        <button type="submit" class="form-control" class="btn" style="font-size: small">딜 생성</button>
+                    </div>
+                    <div class="col col-8"><canvas class="my-4" id="myChart1" class="w-100"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title" style="font-size: small  ">
+                <div class="row">
+                    <div class="col col-4" style="font-weight:bold;text-align: center">
+                        <img src="/img/fish/광어.jpg"  class="w-100"><p></p>
+                        광어 (자연산)<p></p>
+                        <button type="submit" class="form-control" class="btn" style="font-size: small">딜 생성</button>
+                    </div>
+                    <div class="col col-8"><canvas class="my-4" id="myChart2" class="w-100"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#slideItem').animate({left: 0}, 1000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("myChart");
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["월", "화", "수", "목", "금", "토", "일"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 1,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+
+    var ctx1 = document.getElementById("myChart1");
+    var myChart = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ["월", "화", "수", "목", "금", "토", "일"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 1,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+    var ctx2 = document.getElementById("myChart2");
+    var myChart = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ["월", "화", "수", "목", "금", "토", "일"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 1,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>

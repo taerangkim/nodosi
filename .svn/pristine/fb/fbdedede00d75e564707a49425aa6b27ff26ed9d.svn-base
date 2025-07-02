@@ -1,0 +1,26 @@
+
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script src="/js/jquery-ui.js"></script>
+<div class="row  h-75 bg-light">
+    <div class="card my-auto" style="background-color: #e9ecef;">
+        <div class="card-body">
+            <div class="card-title" style="font-size: small">
+                <div class="row">
+                    <div class="col" style="font-weight:bold;text-align: center ;">노도시 로그인</div>
+                </div>
+                <div class="row" >
+                    <div class="col" style="text-align: center;padding-top:10px;padding-bottom: 10px" >
+                        <a href="javascript:void()" onclick="gokakao()"><img src="/img/kakaologin.png" ></a><p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function gokakao() {
+        var app_key = "aaad8c367fcbf41179e77a3a4b74843f";
+        var redirect_uri = "https://{{$hostname}}/kakao/oauth";
+        location.href = "https://kauth.kakao.com/oauth/authorize?client_id=" + app_key + "&redirect_uri=" + redirect_uri + "&response_type=code&state={{$ret}}";
+    }
+</script>

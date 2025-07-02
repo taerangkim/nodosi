@@ -1,0 +1,284 @@
+insert into Tbl_Fish_R_MarkPrice (AuthNum,AuthTel,Flag) values ('672930','010-7751-7244',0)
+insert into Tbl_Fish_R_MarkPrice (AuthNum,AuthTel,Flag) values ('921993','010-7751-7244',0)
+insert into Tbl_Fish_R_MarkPrice (AuthNum,AuthTel,Flag) values ('513343','010-7751-7244',0)
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('19028','010-7751-7244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220224236','20221220224236','0222547093','0','^010-7751-7244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[19028] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('912176','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220225848','20221220225848','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[912176] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+============================================
+2022-12-20 23:05:03 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='912176' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0039060115814209
+============================================
+
+============================================
+2022-12-20 23:05:12 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='912176' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 10
+Query 실행 시간 0.0035431385040283
+============================================
+
+============================================
+2022-12-20 23:09:53 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='912176' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0047898292541504
+============================================
+
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('72292','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220231004','20221220231004','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[72292] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+============================================
+2022-12-20 23:10:35 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='72292' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0034210681915283
+============================================
+
+============================================
+2022-12-20 23:10:35 쿼리 시작
+update Tbl_Wait_Authnum set  Flag=1 WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='72292' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0050787925720215
+============================================
+
+============================================
+2022-12-20 23:11:22 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='72292' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0031569004058838
+============================================
+
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('145728','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220231131','20221220231131','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[145728] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+============================================
+2022-12-20 23:11:49 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='145728' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0032877922058105
+============================================
+
+============================================
+2022-12-20 23:11:49 쿼리 시작
+update Tbl_Wait_Authnum set  Flag=1 WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='145728' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0040080547332764
+============================================
+
+============================================
+2022-12-20 23:17:23 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='145728' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0034768581390381
+============================================
+
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('383046','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220231731','20221220231731','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[383046] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+============================================
+2022-12-20 23:17:50 쿼리 시작
+SELECT * from Tbl_Wait_Authnum WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='383046' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0040090084075928
+============================================
+
+============================================
+2022-12-20 23:17:50 쿼리 시작
+update Tbl_Wait_Authnum set  Flag=1 WHERE 
+                                     Flag=0 AND 
+                                     AuthTel='01077517244' AND 
+                                     AuthNum='383046' AND TIMESTAMPDIFF(MINUTE , RegDate, NOW()) < 3
+Query 실행 시간 0.0048849582672119
+============================================
+
+============================================
+2022-12-20 23:17:50 쿼리 시작
+SELECT 
+ifnull(MAX(WaitNo), 1) + 1 AS WaitNo 
+ FROM Tbl_Wait 
+ WHERE 1=1 and 
+RegDatm='20221220'  
+
+Query 실행 시간 0.0028030872344971
+============================================
+
+insert into Tbl_Wait (WaitNo,MapNo,RegDatm,NoMemCallNum,WaitType) values ('2','2','20221220','01077517244','03')
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','2022년 12월 20일일 대기자 접수 안내','20221220231750','20221220231750','0222547093','0','^01077517244','12월 20일 한길통상 판매장 대기 등록이 되었습니다.
+대기 번호는 2번 입니다.
+대기번호 호출 시 판매장으로 오시기 바랍니다.
+감사합니다.
+')
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0037260055541992
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036249160766602
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0036940574645996
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041890144348145
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0034050941467285
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0042979717254639
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.004770040512085
+============================================
+
+============================================
+2022-12-20 23:17:52 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0040159225463867
+============================================
+
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('167814','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220233926','20221220233926','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[167814] 를 입력하여 주시기 바랍니다.
+감사합니다
+')
+insert into Tbl_Wait_Authnum (AuthNum,AuthTel,Flag) values ('261497','01077517244',0)
+insert into SDK_MMS_SEND (USER_ID,SCHEDULE_TYPE,SUBJECT,NOW_DATE,SEND_DATE,CALLBACK,DEST_COUNT,DEST_INFO,MMS_MSG) values ('nodosi','0','대기 등록을 위한 인증 번호','20221220233959','20221220233959','0222547093','0','^01077517244','한길 통상 상품 구매를 위한 대기 등록 인증 번호 입니다.
+[261497] 를 입력하여 주시기 바랍니다.
+감사합니다
+')

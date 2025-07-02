@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#7952b3">
+    <meta property="og:image" content="http://nodosi.co.kr/img/fav/favicon-16x16.png">
+    <title>노도시</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/css/base.css?cache=20221129111326"  rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/blueimp-gallery.css">
+    <script type="text/javascript" src="/js/function.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/f7cacd7fe0.js" crossorigin="anonymous"></script>
+    <script tpye="text/javascript" src="/js/function.js?cache=20221129111326"></script>
+
+    <script type="text/javascript" src="/js/blueimp-gallery.js"></script>
+    <script type="text/javascript" src="/js/jquery.blueimp-gallery.js"></script>
+</head>
+<style>
+    body{ background-color: #F7FFF5;}
+
+    img.fixed  {
+        position: fixed;
+        left: 100px;
+        top: 50px;
+        min-width: auto;
+    }
+</style>
+
+<link rel="stylesheet" href="/css/jquery-ui.css?cache=<?=date('Ymdmsi')?>">
+<script src="/js/jquery-ui.js"></script>
+<script>
+
+function frmsubmit()
+{
+    if ($("#telnum").val() =='')
+    {
+        alert("전화번호 뒷자리 4자리를 입력하여 주시기 바랍니다.");
+        return;
+    }
+    if ($("#telnum").val().length == 4)
+    {
+        $("#frm").submit();
+    }else
+    {
+        alert("전화번호 뒷자리 4자리를 정확히 입력하여 주시기 바랍니다.");
+        return;
+    }
+}
+</script>
+<body id="page-top" >
+    <div id="wrapper">
+        <div class="row" style="padding-top:50px;">
+            구매 당일 대기 휴대전화번호 뒷자리 4자리를 입력하여 주시기 바랍니다.
+        </div>
+        <div class="row">
+            <form method="post" action="/salereport" id="frm" name="frm">
+                <input type="hidden" name="sno" id="sno" value="{{$sno}}">
+                <input type="hidden" name="wait" id="wait" value="{{$wait}}">
+                <div class="form-group row" style="border-top: solid #9d9d9d 1px; padding-bottom: 5px;padding-top: 5px">
+                    <label class="col-sm-5 col-form-label">전화번호 뒷자리 4자리</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control form-control-sm" name="telnum" id="telnum" value="" autocomplete="off" placeholder="숫자 형식만 입력가능" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" telOnly="true" maxlength="4"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="form-control btn-success" class="btn" onclick="frmsubmit()">명세표 확인하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+

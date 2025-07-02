@@ -1,0 +1,74 @@
+<div class="container-fluid" style="background-color: #e0e0e0;">
+ <div class="row" style="padding-left:10px;padding-right: 10px">
+ <p></p>
+ <div class="col-3 img-over" style="padding: 2px;maring:2px;">
+ <a href="/review/reviewdetail">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ </a>
+ <span class="rating">★4.8</span>
+ <div class="afterNick">광어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">우럭님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100" style=" ">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">숭어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">농가남기님 </div>
+ </div>
+ </div>
+ <div class="row" style="padding-left:10px;padding-right: 10px">
+ <div class="col-3 img-over" style="padding: 1px;maring:1px;">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">광어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">우럭님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100" style=" ">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">숭어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">농가남기님 </div>
+ </div>
+ </div>
+ <div class="row" style="padding-left:10px;padding-right: 10px">
+ <div class="col-3 img-over" style="padding: 1px;maring:1px;">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">광어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">우럭님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100" style=" ">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">숭어님 </div>
+ </div>
+ <div class="col-3 img-over">
+ <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+ <span class="rating">★4.8</span>
+ <div class="afterNick">농가남기님 </div>
+ </div>
+ </div>
+ <p></p>
+ <button type="submit" class="form-control" class="btn" style="font-size: small">후기 더보기</button>
+
+</div>

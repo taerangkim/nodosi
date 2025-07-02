@@ -1,0 +1,123 @@
+<div class="container" style="background-color: #e0e0e0">
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title" style="font-size: small  ">
+                <div class="row">
+                    <div class="col col-4" style="font-weight:bold;text-align: center ; vertical-align: middle">
+                        <img src="/img/fish/광어.jpg"  class="w-100"><p></p>
+                        광어 (자연산)<p></p>
+                    </div>
+                    <div class="col col-8"><canvas class="my-4" id="myChart" class="w-100"></canvas></div>
+                </div>
+                <div class="row">
+                    <form>
+                        <div class="form-group row" style="border-top: solid #9d9d9d 1px;padding-bottom: 5px;padding-top: 5px">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">원산지</label>
+                            <div class="col-sm-9">
+                                <select class="form-control form-control-sm">
+                                    <option>원산지</option>
+                                    <option>제주도(자연산)</option>
+                                    <option>양식</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="border-top: solid #9d9d9d 1px; padding-bottom: 5px;padding-top: 5px">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">무게</label>
+                            <div class="col-sm-9">
+                                <select class="form-control form-control-sm">
+                                    <option>Kg</option>
+                                    <option>1Kg</option>
+                                    <option>2Kg</option>
+                                    <option>3Kg</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="border-top: solid #9d9d9d 1px; padding-bottom: 5px;padding-top: 5px">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">딜 참여제한</label>
+                            <div class="col-sm-9">
+                                <select class="form-control form-control-sm">
+                                    <option>인원수</option>
+                                    <option>단독</option>
+                                    <option>2 명</option>
+                                    <option>3 명</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="border-top: solid #9d9d9d 1px; padding-bottom: 5px;padding-top: 5px">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">안심번호<br>사용하기</label>
+                            <div class="col-sm-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        사용
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        미사용
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="border-top: solid #9d9d9d 1px; border-bottom: solid #9d9d9d 1px;padding-bottom: 5px;padding-top: 5px">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">피빼기<br>선작업</label>
+                            <div class="col-sm-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        사용
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        미사용
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <p></p>
+                <div class="row">
+                    <button type="submit" class="form-control" class="btn" onclick="document.location.href='/deal/dealchat'">딜 참여</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#slideItem').animate({left: 0}, 1000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("myChart");
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["월", "화", "수", "목", "금", "토", "일"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 1,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>

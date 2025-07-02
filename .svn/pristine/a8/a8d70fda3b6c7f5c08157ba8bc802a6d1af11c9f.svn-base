@@ -1,0 +1,20 @@
+<?php
+//print_r($urlparams);
+?>
+<div class="container w-100">
+    <div class="row">
+        <div class="col"><p><a href="/my" class="link-dark">김승일</a> 안녕하세요</p></div>
+        <div class="col" style="text-align: right"><p>노도시</p></div>
+    </div>
+    <div class="row" style="padding:0px">
+        <div class="col">
+            <ul class="nav nav-fill nav-tabs justify-content-center w-100">
+                <li class="nav-item" ><a class="nav-link @if ($urlparams[0] =='' && !isset($urlparams[1])) active @endif" href="/" style="padding: 5px;height: 30px">홈</a></li>
+                <li class="nav-item"><a class="nav-link @if ($urlparams[0] =='deal') active @endif" href="/deal" style="padding: 5px;height: 30px">지금딜</a></li>
+                <li class="nav-item"><a class="nav-link @if ($urlparams[0] =='price') active @endif" href="/price" style="padding: 5px;height: 30px">시세</a></li>
+                <li class="nav-item"><a class="nav-link @if ($urlparams[0] =='review') active @endif" href="/review" style="padding: 5px;height: 30px">후기</a></li>
+                <li class="nav-item"><a class="nav-link @if ($urlparams[0] =='faq') active @endif" href="#" style="padding: 5px;height: 30px">사용법</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

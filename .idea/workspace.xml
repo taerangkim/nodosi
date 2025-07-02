@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46695ef1-a71f-4587-a29f-33ea4b1e71cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sql" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/sql/mssql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../namu/api.namucpa.com/application/controller/lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/../namu/api.namucpa.com/application/controller/lecture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../namu/api.namucpa.com/application/controller/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/../namu/api.namucpa.com/application/controller/order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="true" afterPath="$PROJECT_DIR$" afterDir="true" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Willbes_Account_ERD/Willbes_Account_ERD2.erm" beforeDir="false" afterPath="$PROJECT_DIR$/Willbes_Account_ERD/Willbes_Account_ERD2.erm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controller/api2.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controller/api2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controller/sys.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controller/sys.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiled/e131003e4cf42150c2aad031d7404d3f6f8ee901.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/compiled/e131003e4cf42150c2aad031d7404d3f6f8ee901.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiled/f6738f601ebad0bc8892b276021af2a0a9377e54.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/compiled/f6738f601ebad0bc8892b276021af2a0a9377e54.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system" beforeDir="true" afterPath="$PROJECT_DIR$/system" afterDir="true" />
+      <change beforePath="$PROJECT_DIR$/system/config" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/system/util/util.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/util/util.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/.github" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/src" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/cache" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/tmp" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/data" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/bindings" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/ttfonts" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/tools" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1PziBQDwQOQmh7GUIW05OZGIvfr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/php/nodosi_front_v1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\muse7\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46695ef1-a71f-4587-a29f-33ea4b1e71cd" name="Default Changelist" comment="" />
+      <created>1566883189843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566883189843</updated>
+      <workItem from="1566883193212" duration="604000" />
+      <workItem from="1566890115706" duration="1008000" />
+      <workItem from="1566900624867" duration="984000" />
+      <workItem from="1566908250041" duration="401000" />
+      <workItem from="1566909210821" duration="717000" />
+      <workItem from="1566909943344" duration="544000" />
+      <workItem from="1567502242388" duration="217000" />
+      <workItem from="1569909251118" duration="13000" />
+      <workItem from="1606718975971" duration="3282000" />
+      <workItem from="1606724381495" duration="2533000" />
+      <workItem from="1606727733205" duration="11691000" />
+      <workItem from="1606810147975" duration="2478000" />
+      <workItem from="1607523327256" duration="1008000" />
+      <workItem from="1689679903702" duration="5989000" />
+      <workItem from="1689843920030" duration="119000" />
+      <workItem from="1689912866158" duration="848000" />
+      <workItem from="1690173637409" duration="2378000" />
+      <workItem from="1690773121600" duration="11270000" />
+      <workItem from="1690944734156" duration="9510000" />
+      <workItem from="1691467804316" duration="3292000" />
+      <workItem from="1693205772475" duration="2001000" />
+      <workItem from="1693376846966" duration="1809000" />
+      <workItem from="1694096264637" duration="634000" />
+      <workItem from="1694676743111" duration="11000" />
+      <workItem from="1714585092720" duration="619000" />
+      <workItem from="1714915680299" duration="609000" />
+      <workItem from="1716045965770" duration="592000" />
+      <workItem from="1718194105084" duration="1009000" />
+      <workItem from="1720185809232" duration="60000" />
+      <workItem from="1720587953796" duration="10000" />
+      <workItem from="1721573302136" duration="10000" />
+      <workItem from="1721698500897" duration="74000" />
+      <workItem from="1723092660323" duration="4000" />
+      <workItem from="1751442523747" duration="947000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1566909956510</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566909956510</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1606727775995</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606727775995</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+</project>

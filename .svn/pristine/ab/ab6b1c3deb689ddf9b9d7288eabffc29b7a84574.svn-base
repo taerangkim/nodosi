@@ -1,0 +1,123 @@
+
+<div class="container" style="min-height:600px;">
+    @include('_templates.myheader')
+    <div class="container" style="background-color: #e0e0e0;padding-top: 10px">
+        <div class="row">
+            <div class="col col-6">
+                <button type="submit" class="form-control" class="btn" style="font-size: x-small" onclick="document.location.href='/my/friend'">친구리스트</button>
+            </div>
+            <div class="col col-6">
+                <button type="submit" class="form-control" class="btn btn-block btn-dark" style="font-size: x-small; background-color: #000000; color: #ffffff" onclick="document.location.href='/my/blackfriend'">블랙리스트</button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">닉네임</th>
+                <th scope="col">등록일</th>
+                <th scope="col">같이 한 딜</th>
+                <th scope="col">관리</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>우럭</td>
+                <td>2020-01-01</td>
+                <td>5회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+
+                <td>광어</td>
+                <td>2020-01-01</td>
+                <td>2회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            <tr>
+                <td>송어</td>
+                <td>2020-01-01</td>
+                <td>1회</td>
+                <td>삭제/블랙</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

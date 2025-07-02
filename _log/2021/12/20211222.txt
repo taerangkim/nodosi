@@ -1,0 +1,939 @@
+============================================
+2021-12-22 19:08:53 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.002964973449707
+============================================
+
+============================================
+2021-12-22 19:08:53 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0037410259246826
+============================================
+
+============================================
+2021-12-22 19:08:53 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0029840469360352
+============================================
+
+============================================
+2021-12-22 19:08:53 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0036458969116211
+============================================
+
+============================================
+2021-12-22 19:08:54 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0058951377868652
+============================================
+
+============================================
+2021-12-22 19:08:54 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0040562152862549
+============================================
+
+============================================
+2021-12-22 19:08:54 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0037500858306885
+============================================
+
+============================================
+2021-12-22 19:08:54 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0040850639343262
+============================================
+
+{"access_token":"AwDcMpto1KQjD3TdkxIDKo7hlTGZQV4eXZQYJQo9dNsAAAF94Z2J2w","token_type":"bearer","refresh_token":"f8Pf2iUei_d4eW-DDxnZJxLSHtOivDEyhkFOwgo9dNsAAAF94Z2J2g","expires_in":21599,"scope":"account_email profile","refresh_token_expires_in":5183999}
+{"id":1571779037,"connected_at":"2021-08-05T13:42:47Z","properties":{"nickname":"김승일","profile_image":"http://k.kakaocdn.net/dn/ntUgg/btqGpz3wSR0/lkCUmfGdqRs39VMaaykIUk/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/ntUgg/btqGpz3wSR0/lkCUmfGdqRs39VMaaykIUk/img_110x110.jpg"},"kakao_account":{"profile_needs_agreement":false,"profile":{"nickname":"김승일","thumbnail_image_url":"http://k.kakaocdn.net/dn/ntUgg/btqGpz3wSR0/lkCUmfGdqRs39VMaaykIUk/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/ntUgg/btqGpz3wSR0/lkCUmfGdqRs39VMaaykIUk/img_640x640.jpg","is_default_image":false},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"cadcom4817@gmail.com"}}
+============================================
+2021-12-22 19:08:57 쿼리 시작
+SELECT 
+MemId,
+MemIdx,
+NickName,
+Email,
+IsBiz 
+ FROM Tbl_Member 
+ WHERE 1=1 and 
+MemId='kakao1571779037'  
+
+Query 실행 시간 0.0049281120300293
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0035340785980225
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.004188060760498
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0030920505523682
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0027570724487305
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0027799606323242
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0039329528808594
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0038480758666992
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0032238960266113
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0034818649291992
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0022478103637695
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0021648406982422
+============================================
+
+============================================
+2021-12-22 19:08:58 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0049698352813721
+============================================
+
+============================================
+2021-12-22 19:09:00 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0028650760650635
+============================================
+
+============================================
+2021-12-22 19:09:00 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0062870979309082
+============================================
+
+============================================
+2021-12-22 19:09:00 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0024280548095703
+============================================
+
+============================================
+2021-12-22 19:09:00 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.0028231143951416
+============================================
+
+============================================
+2021-12-22 19:09:05 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0041699409484863
+============================================
+
+============================================
+2021-12-22 19:09:05 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0029439926147461
+============================================
+
+============================================
+2021-12-22 19:09:05 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0027720928192139
+============================================
+
+============================================
+2021-12-22 19:09:05 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.002734899520874
+============================================
+
+============================================
+2021-12-22 19:09:23 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.003108024597168
+============================================
+
+============================================
+2021-12-22 19:09:23 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0024609565734863
+============================================
+
+============================================
+2021-12-22 19:09:23 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0022821426391602
+============================================
+
+============================================
+2021-12-22 19:09:23 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.0027711391448975
+============================================
+
+============================================
+2021-12-22 19:11:06 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030050277709961
+============================================
+
+============================================
+2021-12-22 19:11:06 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0029709339141846
+============================================
+
+============================================
+2021-12-22 19:11:06 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0032219886779785
+============================================
+
+============================================
+2021-12-22 19:11:06 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.0031840801239014
+============================================
+
+============================================
+2021-12-22 19:11:42 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.013019800186157
+============================================
+
+============================================
+2021-12-22 19:11:42 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0028929710388184
+============================================
+
+============================================
+2021-12-22 19:11:42 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0025970935821533
+============================================
+
+============================================
+2021-12-22 19:11:42 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.002849817276001
+============================================
+
+============================================
+2021-12-22 19:11:54 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030560493469238
+============================================
+
+============================================
+2021-12-22 19:11:54 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0042209625244141
+============================================
+
+============================================
+2021-12-22 19:11:54 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.003115177154541
+============================================
+
+============================================
+2021-12-22 19:11:54 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.0026290416717529
+============================================
+
+============================================
+2021-12-22 19:12:03 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030860900878906
+============================================
+
+============================================
+2021-12-22 19:12:03 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0039000511169434
+============================================
+
+============================================
+2021-12-22 19:12:03 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0028140544891357
+============================================
+
+============================================
+2021-12-22 19:12:03 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.0039091110229492
+============================================
+
+============================================
+2021-12-22 19:25:18 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0039050579071045
+============================================
+
+============================================
+2021-12-22 19:25:18 쿼리 시작
+SELECT 
+O.OIdx,
+O.Title,
+Replace(O.OrderMemo, chr(13),'<BR>') as Content,
+O.RegDate,
+O.MemIdx,
+O.ReceiptDate,
+CC.ComName as ReceiptCodeName 
+ FROM Tbl_Order AS O 
+INNER JOIN Tbl_ComCode AS CC ON O.ReceiptCode = CC.ComCode 
+ WHERE 1=1 and MemIdx='371' and 
+isDel='N'  
+ order by  O.Oidx desc 
+
+Query 실행 시간 0.0039739608764648
+============================================
+
+============================================
+2021-12-22 19:25:18 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and 
+OIdx='643'  
+ order by  OPIdx desc 
+
+Query 실행 시간 0.0026509761810303
+============================================
+
+============================================
+2021-12-22 19:25:18 쿼리 시작
+SELECT 
+BRIdx,
+TOR.OIdx,
+TOR.RegDate,
+M.MemIdx,
+M.NickName,
+Replace(Contents, chr(13),'<p>') as Contents 
+ FROM Tbl_Order_Reply AS TOR 
+INNER JOIN Tbl_Member AS M ON TOR.MemIdx = M.MemIdx 
+ WHERE 1=1 and OIdx='643' and 
+isDel='N'  
+
+Query 실행 시간 0.003605842590332
+============================================
+
+============================================
+2021-12-22 19:26:17 쿼리 시작
+SELECT 
+Distinct CC.ComCode,
+CC.ComValue,
+CC.ComName,
+FRO.IsSale 
+ FROM Tbl_ComCode AS CC 
+LEFT join Tbl_Fish_R_ProductType AS FR ON CC.ComCode = FR.FishCode 
+LEFT JOIN Tbl_Fish_R_OrgCode AS FRO ON FR.FRPROIdx = FRO.FRPROIdx 
+ WHERE 1=1 and CC.ComGroup='1000' and 
+CC.ComCode mod 1000>'0' and 
+FRO.IsSale='Y'  
+ order by  CC.ComValue asc 
+
+Query 실행 시간 0.003917932510376
+============================================
+
+============================================
+2021-12-22 19:26:17 쿼리 시작
+SELECT 
+CC.ComCode,
+CC.ComValue,
+CC.ComName 
+ FROM Tbl_ComCode AS CC 
+ WHERE 1=1 and CC.ComGroup='3300' and 
+CC.ComCode mod 1000>'0' and 
+CC.isUse='Y'  
+
+Query 실행 시간 0.0034999847412109
+============================================
+
+============================================
+2021-12-22 19:38:02 쿼리 시작
+SELECT 
+Distinct CC.ComCode,
+CC.ComValue,
+CC.ComName,
+FRO.IsSale 
+ FROM Tbl_ComCode AS CC 
+LEFT join Tbl_Fish_R_ProductType AS FR ON CC.ComCode = FR.FishCode 
+LEFT JOIN Tbl_Fish_R_OrgCode AS FRO ON FR.FRPROIdx = FRO.FRPROIdx 
+ WHERE 1=1 and CC.ComGroup='1000' and 
+CC.ComCode mod 1000>'0' and 
+FRO.IsSale='Y'  
+ order by  CC.ComValue asc 
+
+Query 실행 시간 0.0044081211090088
+============================================
+
+============================================
+2021-12-22 19:38:02 쿼리 시작
+SELECT 
+CC.ComCode,
+CC.ComValue,
+CC.ComName 
+ FROM Tbl_ComCode AS CC 
+ WHERE 1=1 and CC.ComGroup='3300' and 
+CC.ComCode mod 1000>'0' and 
+CC.isUse='Y'  
+
+Query 실행 시간 0.0021929740905762
+============================================
+
+============================================
+2021-12-22 19:54:29 쿼리 시작
+SELECT 
+Distinct CC.ComCode,
+CC.ComValue,
+CC.ComName,
+FRO.IsSale 
+ FROM Tbl_ComCode AS CC 
+LEFT join Tbl_Fish_R_ProductType AS FR ON CC.ComCode = FR.FishCode 
+LEFT JOIN Tbl_Fish_R_OrgCode AS FRO ON FR.FRPROIdx = FRO.FRPROIdx 
+ WHERE 1=1 and CC.ComGroup='1000' and 
+CC.ComCode mod 1000>'0' and 
+FRO.IsSale='Y'  
+ order by  CC.ComValue asc 
+
+Query 실행 시간 0.0034499168395996
+============================================
+
+============================================
+2021-12-22 19:54:29 쿼리 시작
+SELECT 
+CC.ComCode,
+CC.ComValue,
+CC.ComName 
+ FROM Tbl_ComCode AS CC 
+ WHERE 1=1 and CC.ComGroup='3300' and 
+CC.ComCode mod 1000>'0' and 
+CC.isUse='Y'  
+
+Query 실행 시간 0.0027561187744141
+============================================
+
+============================================
+2021-12-22 20:13:13 쿼리 시작
+SELECT 
+Distinct CC.ComCode,
+CC.ComValue,
+CC.ComName,
+FRO.IsSale 
+ FROM Tbl_ComCode AS CC 
+LEFT join Tbl_Fish_R_ProductType AS FR ON CC.ComCode = FR.FishCode 
+LEFT JOIN Tbl_Fish_R_OrgCode AS FRO ON FR.FRPROIdx = FRO.FRPROIdx 
+ WHERE 1=1 and CC.ComGroup='1000' and 
+CC.ComCode mod 1000>'0' and 
+FRO.IsSale='Y'  
+ order by  CC.ComValue asc 
+
+Query 실행 시간 0.0032849311828613
+============================================
+
+============================================
+2021-12-22 20:13:13 쿼리 시작
+SELECT 
+CC.ComCode,
+CC.ComValue,
+CC.ComName 
+ FROM Tbl_ComCode AS CC 
+ WHERE 1=1 and CC.ComGroup='3300' and 
+CC.ComCode mod 1000>'0' and 
+CC.isUse='Y'  
+
+Query 실행 시간 0.0035390853881836
+============================================
+

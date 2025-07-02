@@ -1,0 +1,20 @@
+
+<script>
+    //메시지 전송하고
+    var socket;
+    $(function() {
+        //1초에 한번씩 blur 오동작 방지를 위한 코드 삽입하자
+        socket = io.connect('https://syschat.nodosi.co.kr/');
+        socket.emit("login", {
+            name: "wait",
+            userid: "wait@gmail.com"
+        });
+        socket.on("login", function(data) {
+            $("#chatLogs").append("<div><strong>" + data + "</strong> has joined</div>");
+        });
+        socket.emit("chat", { msg: '{"cmd" : "waitreg"}'});
+        alert('{{$msg}}');
+        document.location.href='{{$location}}';
+    });
+</script>
+<script src="/socket.io/socket.io.js"></script>

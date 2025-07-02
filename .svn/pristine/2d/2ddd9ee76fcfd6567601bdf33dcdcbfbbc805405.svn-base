@@ -1,0 +1,187 @@
+<div class="container" style="min-height:600px;">
+    @include('_templates.myheader')
+    <div class="row">
+        <div class="col"><button type="submit" class="form-control" class="btn" style="font-size: small;" onclick="$('#exampleModal1').modal('show');">후기 작성</button></div>
+    </div>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title">
+                <div class="row">
+                    <div class="col">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px">
+                    <div class="col col-6">
+                        <i class="fa fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp;우럭
+                        <i class="fas fa-star" style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="far fa-star"  style="color: #FF922B"></i>
+                    </div>
+                    <div class="col col-6">2020-01-01 00:00:00</div>
+                </div>
+            </div>
+
+            <div class="card-text" >
+                <!-- 딜 내역 보기 -->
+                <div class="row">
+                    <div class="col">우럭 정말 잘먹었어요 맛좋고 싸고</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title">
+                <div class="row">
+                    <div class="col col-6">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                    <div class="col col-6">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px">
+                    <div class="col col-6">
+                        <i class="fa fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp;우럭
+                        <i class="fas fa-star" style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="far fa-star"  style="color: #FF922B"></i>
+                    </div>
+                    <div class="col col-6">2020-01-01 00:00:00</div>
+                </div>
+            </div>
+
+            <div class="card-text" >
+                <!-- 딜 내역 보기 -->
+                <div class="row">
+                    <div class="col">우럭 정말 잘먹었어요 맛좋고 싸고</div>
+                </div>
+                <div class="row" style="background-color:#e0e0e0;padding-top: 10px;padding-bottom: 5px">
+                    <div class="col col-4"><i class="fas fa-user-circle"></i> 노도시</div>
+                    <div class="col col-8">2020-01-01 01:00:00</div>
+                </div>
+                <div class="row" style="background-color:#e0e0e0;padding-top: 10px;padding-bottom: 5px">
+                    <div class="col " style="font-size: small">맛있게 드셨다니 다행입니다.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card cardcolor1">
+        <div class="card-body">
+            <div class="card-title">
+                <div class="row">
+                    <div class="col col-4">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                    <div class="col col-4">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                    <div class="col col-4">
+                        <img src="/img/sample/KakaoTalk_20201212_160250052_01.jpg" class="w-100">
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px">
+                    <div class="col col-6">
+                        <i class="fa fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp;우럭
+                        <i class="fas fa-star" style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="fas fa-star"  style="color: #FF922B"></i>
+                        <i class="far fa-star"  style="color: #FF922B"></i>
+                    </div>
+                    <div class="col col-6">2020-01-01 00:00:00</div>
+                </div>
+            </div>
+
+            <div class="card-text" >
+                <!-- 딜 내역 보기 -->
+                <div class="row">
+                    <div class="col">우럭 정말 잘먹었어요 맛좋고 싸고</div>
+                </div>
+                <div class="row" style="background-color:#e0e0e0;padding-top: 10px;padding-bottom: 5px">
+                    <div class="col col-4"><i class="fas fa-user-circle"></i> 노도시</div>
+                    <div class="col col-8">2020-01-01 01:00:00</div>
+                </div>
+                <div class="row" style="background-color:#e0e0e0;padding-top: 10px;padding-bottom: 5px">
+                    <div class="col " style="font-size: small">맛있게 드셨다니 다행입니다.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-size: small">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-size: small">리뷰 작성</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i>닫기</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="clo">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">별점</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">문의글 작성</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">첨부 사진 선택</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">첨부 사진 선택</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">첨부 사진 선택</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">첨부 사진 선택</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size: small">닫기</button>
+                    <button type="button" class="btn btn-primary" style="font-size: small">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

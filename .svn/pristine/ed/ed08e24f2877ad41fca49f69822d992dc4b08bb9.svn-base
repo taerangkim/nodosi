@@ -1,0 +1,396 @@
+============================================
+2020-12-11 17:41:20 쿼리 시작
+SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '학원종합반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1201' and 
+ProdTypeCat2='1302' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_학원종합반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1201' and 
+b.ProdTypeCat2='1302' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도학원종합반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1201' and 
+ProdTypeCat2='1302' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_학원종합반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1201' and 
+b.ProdTypeCat2='1302' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '온라인종합반' as ProdType 
+ FROM Tbl_OrderProduct AS A 
+ WHERE 1=1 and ProdTypeCat1='1202' and 
+ProdTypeCat2='1304' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_온라인종합반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1202' and 
+b.ProdTypeCat2='1304' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도온라인종합반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1202' and 
+ProdTypeCat2='1304' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_온라인종합반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1202' and 
+b.ProdTypeCat2='1304' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191111'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '학원단과반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1201' and 
+ProdTypeCat2='1301' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_학원단과반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1201' and 
+b.ProdTypeCat2='1301' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도학원단과반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1201' and 
+ProdTypeCat2='1301' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_학원단과반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1201' and 
+b.ProdTypeCat2='1301' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '온라인단과반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1202' and 
+ProdTypeCat2='1303' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_온라인단과반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1202' and 
+b.ProdTypeCat2='1303' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도온라인단과반' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1202' and 
+ProdTypeCat2='1303' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_온라인단과반' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1202' and 
+b.ProdTypeCat2='1303' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '도서' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1203' and 
+ProdTypeCat2 is null and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_도서' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1203' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도도서' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat1='1203' and 
+ProdTypeCat2 is null and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_도서' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat1='1203' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '학원패키지' 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat2='1306' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불_학원패키지'  
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat2='1306' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도_학원패키지' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat2='1306' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도_학원패키지'  
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat2='1306' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as SubPrice1, count(A.OrderIdx) as cnt, '학원패키지_학원종합반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1302' and 
+A.ConfirmDate>='20201111' and 
+A.ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불학원패키지_학원종합반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1302' and 
+A.RefundDate>='20201111' and 
+A.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as Price, count(A.OrderIdx) as cnt, '전년도학원패키지_학원종합반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1302' and 
+A.ConfirmDate>='20191111' and 
+A.ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불전년도학원패키지_학원종합반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1302' and 
+A.RefundDate>='20191111' and 
+A.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as SubPrice1, count(A.OrderIdx) as cnt, '학원패키지_온라인종합반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1304' and 
+A.ConfirmDate>='20201111' and 
+A.ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불학원패키지_온라인종합반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1304' and 
+A.RefundDate>='20201111' and 
+A.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as Price, count(A.OrderIdx) as cnt, '전년도학원패키지_온라인종합반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1304' and 
+A.ConfirmDate>='20191111' and 
+A.ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불전년도학원패키지_온라인종합반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1304' and 
+A.RefundDate>='20191111' and 
+A.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as SubPrice1, count(A.OrderIdx) as cnt, '학원패키지_학원단과반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1301' and 
+A.ConfirmDate>='20201111' and 
+A.ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불학원패키지_학원단과반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1301' and 
+A.RefundDate>='20201111' and 
+A.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as Price, count(A.OrderIdx) as cnt, '전년도학원패키지_학원단과반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1301' and 
+A.ConfirmDate>='20191111' and 
+A.ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불전년도학원패키지_학원단과반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1301' and 
+A.RefundDate>='20191111' and 
+A.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as SubPrice1, count(A.OrderIdx) as cnt, '학원패키지_온라인단과반' 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1303' and 
+A.ConfirmDate>='20201111' and 
+A.ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불학원패키지_온라인단과반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1303' and 
+A.RefundDate>='20201111' and 
+A.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as Price, count(A.OrderIdx) as cnt, '전년도학원패키지_온라인단과반' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat2='1303' and 
+A.ConfirmDate>='20191111' and 
+A.ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불전년도학원패키지_온라인단과반' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat2='1303' and 
+A.RefundDate>='20191111' and 
+A.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as SubPrice1, count(A.OrderIdx) as cnt, '학원패키지_도서' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat1='1203' and 
+A.ConfirmDate>='20201111' and 
+A.ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불학원패키지_도서' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat1='1203' and 
+A.RefundDate>='20201111' and 
+A.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(SubPrice1), 0) as Price, count(A.OrderIdx) as cnt, '전년도학원패키지_도서' as ProdType 
+ FROM Tbl_OrderProduct as A 
+LEFT JOIN Tbl_OrderProduct_Sub1 AS B ON B.OPIdx = A.OPIdx  
+LEFT JOIN Tbl_Product AS C ON C.ProdCode = B.SubProdCode1  
+ WHERE 1=1 and A.ProdTypeCat2='1306' and 
+C.ProdTypeCat1='1203' and 
+A.ConfirmDate>='20191111' and 
+A.ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(sum(B.RefundPrice), 0) as RefundPrice1, count(A.OrderIdx) as cnt, '환불전년도학원패키지_도서' as ProdType 
+ FROM Tbl_OrderRefund AS A 
+INNER JOIN Tbl_OrderRefund_Sub1 AS B ON A.ORIdx=B.ORIdx 
+INNER JOIN Tbl_Product AS C ON A.ProdCode = C.ProdCode 
+INNER JOIN Tbl_Product AS D ON B.SubProdCode1 = D.ProdCode 
+ WHERE 1=1 and C.ProdTypeCat2='1306' and 
+D.ProdTypeCat1='1203' and 
+A.RefundDate>='20191111' and 
+A.RefundDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '온라인패키지' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat2='1305' and 
+ConfirmDate>='20201111' and 
+ConfirmDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불온라인패키지' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat2='1305' and 
+a.RefundDate>='20201111' and 
+a.RefundDate <='20201211'  
+  Union All  SELECT 
+ifnull(SUM(Price), 0) as Price, count(OrderIdx) as cnt, '전년도온라인패키지' as ProdType 
+ FROM Tbl_OrderProduct 
+ WHERE 1=1 and ProdTypeCat2='1305' and 
+ConfirmDate>='20191111' and 
+ConfirmDate <='20191211'  
+  Union All  SELECT 
+ifnull(SUM(RefundPrice), 0) AS RefundPrice, COUNT(a.OrderIdx) AS cnt, '환불전년도온라인패키지' as ProdType 
+ FROM Tbl_OrderRefund AS a 
+INNER JOIN Tbl_Product AS b ON a.ProdCode = b.ProdCode 
+ WHERE 1=1 and b.ProdTypeCat2='1305' and 
+a.RefundDate>='20191111' and 
+a.RefundDate <='20191211'  
+
+Query 실행 시간 0.38202691078186
+============================================
+

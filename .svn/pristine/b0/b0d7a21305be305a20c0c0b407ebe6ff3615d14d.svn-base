@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script src="/js/jquery-ui.js"></script>
+<script type="text/javascript">
+    function reply(Oidx)
+    {
+        $("#replymode").val('ins');
+        $("#Oidx").val(Oidx);
+        $('#reply').modal('show');
+    }
+    function replySubimt()
+    {
+        if($("#replyContent").val() == '')
+        {
+            alert('댓글을 작성하여 주시기 바랍니다.');
+            return false;
+        }
+        if(confirm('댓글을 등록하시겠습니까?')) {
+            $("#replyfrm").submit();
+        }
+    }
+    function deleteReserv(OIdx) {
+        if (confirm('해당 예약을 삭제 하시겠습니까?')) {
+            $("#ordefrm").attr('action', '/order/orderdelproc');
+            $("#orderidx").val(OIdx);
+            $("#ordefrm").submit();
+        }
+    }
+    function goOrder()
+    {
+        document.location.href='/order/orderfrm';
+    }
+</script>
+<div class="row bg-light pt-3">
+    <form method="post" id="ordefrm" name="ordefrm">
+        <input type="hidden" name="orderidx" id="orderidx" value="">
+    </form>
+    <div class="col">
+        <button type="button" class="form-control btn btn-outline-dark" onclick="goOrder()">예약하기</button>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col" style="font-weight:bold;vertical-align: middle;padding-bottom: 20px;">
+            1.예약은 오전8시부터 금일 자정까지 받습니다.<BR>
+            2.자연산또는 특수품목의 경우 당일 입하량 이나 가격의 변수등으로 인하여 물량이 없을수 있습니다.<BR>
+            자연산의 경우 주문스펙과 현장물건이 안맞을 경우 현장취소 가능합니다.<BR>
+            3.예약분은 실명으로 계약금 5만 입금 수협 1010-2118-1674 (주)노도시 확인된분에 한해서만 예약처리 합니다.<BR>
+            4.예약자분들은 4시 이후 방문을 적극권장합니다. 경매받는 시간을 주셔야 합니다.<br>
+            5.방어 필렛 출시!!!!!! [<a href="#" onclick="$('#notic').modal('show');">내용보기</a> ] <br>
+            6.자세한 예약 방법은 이곳에서 확인 하시기 바랍니다. [<a href="/order/orderfaq">예약방법 안내</a>]
+        </div>
+    </div>
+    @foreach ($result as $item)
+        <div class="card cardcolor1">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col col-3"><b>제목</b></div>
+                    <div class="col col-6">{{$item['Title']}}</div>
+                    <div class="col col-3">
+                        <button type="button" class="form-control" class="btn" style="font-size: x-small" onclick="deleteReserv({{$item['OIdx']}})">
+                            <span class="fas fa-times-circle fa-lg" aria-hidden="true" style="color:red;"></span>&nbsp;&nbsp;&nbsp;삭제
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-3"><b>작성일</b></div>
+                    <div class="col col-8">{{$item['RegDate']}}</div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col col-3"><b>수령정보</b></div>
+                    <div class="col col-8">{{$item['ReceiptDate']}} {{$item['ReceiptCodeName']}} 예정</div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col radius5px" style="min-height: 100px;padding-top:10px;padding-bottom: 10px">
+                        <?=$item['Content'];?>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col"><h6><b>예약항목</b></h6></div>
+                </div>
+                <p></p>
+                @foreach($util->array_search($orderProduct, 'OIdx', $item['OIdx']) as $pitem)
+                    <div class="row">
+                        <div class="col">
+                            {{$comcode[$util->rowsearch($comcode, 'ComCode', $pitem['FishCode'])]['ComName']}} /
+                            {{$comcode[$util->rowsearch($comcode, 'ComCode', $pitem['ProdCode'])]['ComName']}} /
+                            {{$comcode[$util->rowsearch($comcode, 'ComCode', $pitem['OriginCode'])]['ComName']}} /
+                            {{$comcode[$util->rowsearch($comcode, 'ComCode', $pitem['KgCode'])]['ComName']}} / @if ($pitem['ReceiptStatus'] == 'Y') 수령 @else 미수령 @endif
+                        </div>
+                    </div>
+                @endforeach
+                <p></p>
+                <div class="row" style="padding-left: 5px;padding-right: 5px">
+                    <div class="col">
+                    @foreach($util->array_search($replyResult, 'OIdx', $item['OIdx']) as $replyitem)
+                        <div class="row radiusTop5px" style="background: #ffffff;padding-top:15px;border-top: solid 1px black; border-left: solid 1px black; border-right: solid 1px black">
+                            <div class="col col-6"><i class="fas fa-greater-than" style="color:dodgerblue;">&nbsp;</i>
+                            @if ($item['MemIdx'] == $replyitem['MemIdx'])
+                                본인
+                            @else
+                                {{$replyitem['NickName']}}
+                            @endif
+                            </div>
+                            <div class="col col-6" style="text-align: right">{{$replyitem['RegDate']}}</div>
+                        </div>
+                        <div class="row" style="background: #ffffff;border-right: solid 1px black; border-left: solid 1px black;min-height: 50px;padding-top:10px;padding-bottom: 10px;">
+                            <div class="col" id="reply{{$replyitem['BRIdx']}}"><?=$replyitem['Contents'];?></div>
+                        </div>
+                        <div class="row radiusBottom5px" style="background: #ffffff;height: 5px;padding-bottom: 10px;border-bottom: solid 1px black;border-left: solid 1px black; border-right: solid 1px black;">
+                            <div class="col"></div>
+                        </div>
+                        <p></p>
+                    @endforeach
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <button type="button" class="form-control" class="btn" onclick="reply({{$item['OIdx']}})">댓글 작성하기</button>
+                </div>
+            </div>
+        </div>
+        <p></p>
+    @endforeach
+</div>
+<div class="modal fade" id="reply" tabindex="-1" style="font-size: small">
+    <form method="post" action="/order/orderreplyproc" id="replyfrm" name="replyfrm">
+        <input type="hidden" name="Oidx" id="Oidx" value="">
+        <input type="hidden" name="bridx" id="bridx" value="">
+        <input type="hidden" name="replymode" id="replymode" value="ins">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"  style="font-size: small">댓글 작성</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <textarea class="form-control" id="replyContent" name="replyContent" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size: small" onclick="$('#reply').modal('hide');">닫기</button>
+                    <button type="button" class="btn btn-primary" style="font-size: small" onclick="replySubimt()">저장</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="modal fade" id="notic" tabindex="-1" style="font-size: small">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"  style="font-size: small">방어 필렛 출시</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            방어 필렛 출시!!<p></p>
+                            당일 시세 반영 합니다.<p></p>
+                            예>kg당 단가 15,000원일경 필렛 kg당가격은 36,000원 책정 됩니다.<p></p>
+                            시세변동시 필렛가격이 변동 됩니다. +,- 5,000원 정도 예상하시면 감사하겠습니다.<p></p>
+                            최대한 가격을 맞추려고 노력하지만, 생물가격이 고정가격이 아닌점을 감안해주시기 바랍니다.<p></p>
+                            더 좋은가격과 품질로 보답하려고 노력하겠습니다.<p></p>
+                            감사합니다.<p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size: small" onclick="$('#notic').modal('hide');">닫기</button>
+                </div>
+            </div>
+        </div>
+
+</div>
+

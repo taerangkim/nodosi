@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <meta name="author" content="">
+ <meta name="theme-color" content="#7952b3">
+ <title>노도시</title>
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+ <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+ <link href="/css/base.css?cache=<?=date('Ymd')?>"  rel="stylesheet">
+ <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div class="container w-100">
+ <div class="row">
+ <div class="col"><p>김승일 안녕하세요</p></div>
+ <div class="col" style="text-align: right"><p>노도시</p></div>
+ </div>
+ <div class="row" style="padding:0px">
+ <div class="col">
+ <ul class="nav nav-fill nav-tabs justify-content-center w-100">
+ <li class="nav-item" ><a class="nav-link " href="/">홈</a></li>
+ <li class="nav-item"><a class="nav-link active" href="/deal">지금딜</a></li>
+ <li class="nav-item"><a class="nav-link" href="/price">시세</a></li>
+ <li class="nav-item"><a class="nav-link" href="/review">후기</a></li>
+ <li class="nav-item"><a class="nav-link" href="#">사용법</a></li>
+ </ul>
+ </div>
+ </div>
+</div>
+<div class="container" style="background-color: #e0e0e0">
+ <div class="card cardcolor1">
+ <div class="card-body">
+ <div class="card-title" style="font-size: small  ">
+ <div class="row">
+ <div class="col">광어 자연산 3kg 팟</div>
+ </div>
+ <div class="row">
+ <div class="col col-3">딜 시작일</div>
+ <div class="col col-9">2020-01-01 00:00:00</div>
+ </div>
+ <div class="row">
+ <div class="col col-3">딜 제안</div>
+ <div class="col col-9">광어 3Kg, 안심번호 사용, 선 작업, 2인 수령</div>
+ </div>
+ <div class="row">
+ <div class="col col-3">가능인원</div>
+ <div class="col col-9">2명</div>
+ </div>
+ <div class="row">
+ <div class="col col-3">참여자</div>
+ <div class="col col-9">
+ 도미[본인]<br>
+ 우럭
+ </div>
+ </div>
+ <div class="row" style="background-color: #ffffff;padding-top:10px">
+ <div class="overflow-auto" style="height: 200px">
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ <div class="row" style="padding-bottom: 5px">
+ <div class="col col-2">도미</div>
+ <div class="col col-1">></div>
+ <div class="col col-9">2등분해서 가지고 갑시다</div>
+ </div>
+ </div>
+ </div>
+ <div class="row" style="padding-top: 10px;">
+ <div class="col col-8" style="padding: 0px;font-size: small">
+ <input type="text" class="form-control" id="inputPassword2" placeholder="검색" style="font-size: small">
+ </div>
+ <div class="col col-4 text-center" style="padding: 0px;">
+ <button odtype="button" class="btn btn-outline-secondary  btn-sm" style="font-size: small">전송</button>
+ <button type="button" class="btn btn-outline-secondary  btn-sm" style="font-size: small">성사요청</button>
+ </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="$('#exampleModal').modal('show');">
+ Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+ <div class="modal-content">
+ <div class="modal-header">
+ <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ <span aria-hidden="true">&times;</span>
+ </button>
+ </div>
+ <div class="modal-body">
+ ...
+ </div>
+ <div class="modal-footer">
+ <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ <button type="button" class="btn btn-primary">Save changes</button>
+ </div>
+ </div>
+ </div>
+</div>
+</body>
+</html>

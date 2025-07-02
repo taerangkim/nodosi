@@ -1,0 +1,496 @@
+============================================
+2023-01-30 19:07:18 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0067338943481445
+============================================
+
+============================================
+2023-01-30 19:07:18 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-30' and 
+TFRM.IsDel='N'  
+ order by  FishName asc 
+
+Query 실행 시간 0.0082011222839355
+============================================
+
+============================================
+2023-01-30 19:07:21 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-06' and 
+TFRM.IsDel='N'  
+
+Query 실행 시간 0.007483959197998
+============================================
+
+============================================
+2023-01-30 19:07:46 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0075051784515381
+============================================
+
+============================================
+2023-01-30 19:07:46 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-30' and 
+TFRM.IsDel='N'  
+ order by  FishName asc 
+
+Query 실행 시간 0.0085709095001221
+============================================
+
+============================================
+2023-01-30 19:07:54 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-28' and 
+TFRM.IsDel='N'  
+
+Query 실행 시간 0.0081539154052734
+============================================
+
+============================================
+2023-01-30 19:07:57 쿼리 시작
+SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-30' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-29' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-28' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-27' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-26' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-25' AS RegDatm FROM DUAL) as MST 
+  Union SELECT 
+*,
+IFNULL((SELECT MarketPrice FROM Tbl_Fish_R_MarkPrice AS FRM WHERE 
+                        FRPROIDX=54 AND 
+                        FORGIdx=163 AND 
+                        KgCode=100015 AND 
+                        IsDel='N' AND FRM.RegDatm=MST.RegDatm), 0) AS Price 
+ FROM (SELECT '2023-01-24' AS RegDatm FROM DUAL) as MST 
+
+Query 실행 시간 0.033766984939575
+============================================
+
+============================================
+2023-01-30 19:08:47 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-28' and 
+TFRM.IsDel='N'  
+ order by  FishName asc 
+
+Query 실행 시간 0.0083568096160889
+============================================
+
+============================================
+2023-01-30 19:11:39 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 20 
+
+Query 실행 시간 0.016815900802612
+============================================
+
+============================================
+2023-01-30 19:11:40 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-30' and 
+TFRM.IsDel='N'  
+ order by  FishName asc 
+
+Query 실행 시간 0.0086829662322998
+============================================
+
+============================================
+2023-01-30 19:11:53 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-28' and 
+TFRM.IsDel='N'  
+ order by  FishName asc, ProdName asc, OrgName asc 
+
+Query 실행 시간 0.0088949203491211
+============================================
+
+============================================
+2023-01-30 19:12:07 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and RegDatm='2023-01-27' and 
+TFRM.IsDel='N'  
+ order by  FishName asc, ProdName asc, OrgName asc, KgName asc 
+
+Query 실행 시간 0.010354042053223
+============================================
+
+============================================
+2023-01-30 20:33:03 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029110908508301
+============================================
+
+============================================
+2023-01-30 20:33:03 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036349296569824
+============================================
+
+============================================
+2023-01-30 20:33:03 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0042009353637695
+============================================
+
+============================================
+2023-01-30 20:33:03 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0041320323944092
+============================================
+
+============================================
+2023-01-30 20:33:04 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0035629272460938
+============================================
+
+============================================
+2023-01-30 20:33:04 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0036501884460449
+============================================
+
+============================================
+2023-01-30 20:33:04 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0087521076202393
+============================================
+
+============================================
+2023-01-30 20:33:04 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0039780139923096
+============================================
+
+============================================
+2023-01-30 20:33:08 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0080270767211914
+============================================
+
+============================================
+2023-01-30 20:33:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2001' and 
+TB.IsDel='N'  
+ order by  Bidx desc 
+ limit 0,10  
+
+Query 실행 시간 0.0035898685455322
+============================================
+
+============================================
+2023-01-30 20:33:08 쿼리 시작
+SELECT 
+TB.*, TA.AdminName, TMB.NickName 
+ FROM Tbl_Board as TB 
+inner join Tbl_Member as TMB on TB.MemIdx = TMB.MemIdx 
+inner join Tbl_Admin as TA on TMB.MemIdx = TA.MemIdx 
+ WHERE 1=1 and TB.ComCode='2003' and TB.IsDel='N' and TB.RegDate> DATE_ADD(NOW(), INTERVAL -3 DAY) 
+ order by  Bidx desc 
+
+Query 실행 시간 0.0047850608825684
+============================================
+
+============================================
+2023-01-30 20:33:08 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.MemIdx,
+TM.NickName,
+TB.title,
+TB.RegDate,
+TB.Content,
+TB.Count,
+ifnull ((SELECT ImageName FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx 
+                        WHERE BIdx = TB.BIdx ORDER BY TI.ImgIdx asc LIMIT 0,1  ), '') as ImageName,
+ifnull ((SELECT path FROM Tbl_Board_R_Img AS BRI 
+                        INNER JOIN Tbl_Image AS TI ON BRI.ImgIdx = TI.ImgIdx
+                        WHERE BIdx = TB.BIdx Order BY TI.ImgIdx asc LIMIT 0,1), '') as path 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+ WHERE 1=1 and 
+TB.ComCode='2002'  
+ order by  RegDate desc 
+ limit 0, 12 
+
+Query 실행 시간 0.0045409202575684
+============================================
+

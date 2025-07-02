@@ -1,0 +1,872 @@
+============================================
+2021-10-14 18:47:39 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+
+Query 실행 시간 0.0036921501159668
+============================================
+
+============================================
+2021-10-14 18:47:39 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and 
+RegDatm='2021-10-14'  
+
+Query 실행 시간 0.0038571357727051
+============================================
+
+============================================
+2021-10-14 18:47:44 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and 
+RegDatm='2021-10-01'  
+
+Query 실행 시간 0.0043678283691406
+============================================
+
+============================================
+2021-10-14 18:50:01 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 30 
+
+Query 실행 시간 0.0041649341583252
+============================================
+
+============================================
+2021-10-14 18:50:01 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and 
+RegDatm='2021-10-14'  
+
+Query 실행 시간 0.004054069519043
+============================================
+
+============================================
+2021-10-14 18:50:08 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 30 
+
+Query 실행 시간 0.0040378570556641
+============================================
+
+============================================
+2021-10-14 18:50:08 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and 
+RegDatm='2021-10-14'  
+
+Query 실행 시간 0.0033431053161621
+============================================
+
+============================================
+2021-10-14 18:50:13 쿼리 시작
+SELECT 
+Distinct RegDatm 
+ FROM Tbl_Fish_R_MarkPrice 
+ order by  RegDatm Desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0036399364471436
+============================================
+
+============================================
+2021-10-14 18:50:13 쿼리 시작
+SELECT 
+FORMAT(TFRM.MarketPrice, 0) as MarketPrice,
+CC.ComName as FishName,
+CC.ComCode as FishCode ,
+CC1.ComName as ProdName,
+FRPO.FRPROIdx as ProdCode,
+DD.ComName as OrgName,
+FRPO.FORGIdx as OrgCode,
+EE.ComName as KgName,
+EE.ComCode as KgCode 
+ FROM Tbl_Fish_R_MarkPrice as TFRM 
+INNER JOIN Tbl_Fish_R_ProductType AS FRP ON TFRM.FRPROIdx = FRP.FRPROIdx 
+INNER JOIN Tbl_ComCode AS CC ON FRP.FishCode = CC.ComCode 
+INNER JOIN Tbl_ComCode AS CC1 ON FRP.ProdCode = CC1.ComCode 
+INNER JOIN Tbl_Fish_R_OrgCode AS FRPO ON TFRM.FORGIdx = FRPO.FORGIdx 
+INNER JOIN Tbl_ComCode AS DD ON FRPO.OrgCode = DD.ComCode 
+INNER JOIN Tbl_ComCode AS EE ON TFRM.KgCode = EE.ComCode 
+ WHERE 1=1 and 
+RegDatm='2021-10-14'  
+
+Query 실행 시간 0.0050349235534668
+============================================
+
+============================================
+2021-10-14 18:51:37 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0034470558166504
+============================================
+
+============================================
+2021-10-14 18:51:37 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0030100345611572
+============================================
+
+============================================
+2021-10-14 18:51:37 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030519962310791
+============================================
+
+============================================
+2021-10-14 18:51:37 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0039150714874268
+============================================
+
+============================================
+2021-10-14 18:51:39 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.002683162689209
+============================================
+
+============================================
+2021-10-14 18:51:39 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0034878253936768
+============================================
+
+============================================
+2021-10-14 18:51:39 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.002763032913208
+============================================
+
+============================================
+2021-10-14 18:51:39 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0034058094024658
+============================================
+
+============================================
+2021-10-14 18:51:40 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031120777130127
+============================================
+
+============================================
+2021-10-14 18:51:40 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0036089420318604
+============================================
+
+============================================
+2021-10-14 18:51:41 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0030388832092285
+============================================
+
+============================================
+2021-10-14 18:51:41 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0031681060791016
+============================================
+
+============================================
+2021-10-14 18:51:42 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0029919147491455
+============================================
+
+============================================
+2021-10-14 18:51:42 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0033259391784668
+============================================
+
+============================================
+2021-10-14 18:51:42 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031981468200684
+============================================
+
+============================================
+2021-10-14 18:51:42 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0043017864227295
+============================================
+
+============================================
+2021-10-14 18:51:43 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.003403902053833
+============================================
+
+============================================
+2021-10-14 18:51:43 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.004040002822876
+============================================
+
+============================================
+2021-10-14 18:51:46 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0038840770721436
+============================================
+
+============================================
+2021-10-14 18:51:46 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0038478374481201
+============================================
+
+============================================
+2021-10-14 18:51:46 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0035991668701172
+============================================
+
+============================================
+2021-10-14 18:51:46 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0040199756622314
+============================================
+
+============================================
+2021-10-14 18:51:48 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0036299228668213
+============================================
+
+============================================
+2021-10-14 18:51:48 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0038809776306152
+============================================
+
+============================================
+2021-10-14 18:52:26 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0026240348815918
+============================================
+
+============================================
+2021-10-14 18:52:26 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0024609565734863
+============================================
+
+============================================
+2021-10-14 18:52:26 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0033209323883057
+============================================
+
+============================================
+2021-10-14 18:52:26 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0043728351593018
+============================================
+
+============================================
+2021-10-14 18:52:52 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0032021999359131
+============================================
+
+============================================
+2021-10-14 18:52:52 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0031888484954834
+============================================
+
+============================================
+2021-10-14 18:52:53 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0026981830596924
+============================================
+
+============================================
+2021-10-14 18:52:53 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0035150051116943
+============================================
+
+============================================
+2021-10-14 18:53:19 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0038108825683594
+============================================
+
+============================================
+2021-10-14 18:53:19 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0036258697509766
+============================================
+
+============================================
+2021-10-14 18:53:19 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0036640167236328
+============================================
+
+============================================
+2021-10-14 18:53:19 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0061140060424805
+============================================
+
+============================================
+2021-10-14 18:53:24 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0033080577850342
+============================================
+
+============================================
+2021-10-14 18:53:24 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0036311149597168
+============================================
+
+============================================
+2021-10-14 18:53:24 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0057580471038818
+============================================
+
+============================================
+2021-10-14 18:53:24 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0037038326263428
+============================================
+
+============================================
+2021-10-14 18:53:58 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0036718845367432
+============================================
+
+============================================
+2021-10-14 18:53:58 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0037059783935547
+============================================
+
+============================================
+2021-10-14 18:53:59 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031208992004395
+============================================
+
+============================================
+2021-10-14 18:53:59 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0040099620819092
+============================================
+
+============================================
+2021-10-14 18:54:06 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0064990520477295
+============================================
+
+============================================
+2021-10-14 18:54:06 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0025100708007812
+============================================
+
+============================================
+2021-10-14 18:54:06 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0027999877929688
+============================================
+
+============================================
+2021-10-14 18:54:06 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0030698776245117
+============================================
+
+============================================
+2021-10-14 18:54:15 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0047440528869629
+============================================
+
+============================================
+2021-10-14 18:54:15 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+
+Query 실행 시간 0.0029668807983398
+============================================
+
+============================================
+2021-10-14 18:54:16 쿼리 시작
+SELECT 
+ComCode, ComName, ComValue, ComGroup 
+ FROM Tbl_ComCode 
+ WHERE 1=1 and isUse='Y' and 
+IsStatus='Y'  
+
+Query 실행 시간 0.0031168460845947
+============================================
+
+============================================
+2021-10-14 18:54:16 쿼리 시작
+SELECT 
+TB.BIdx,
+TB.title,
+DATE_FORMAT(TB.RegDate, '%Y-%m-%d') as RegDate 
+ FROM Tbl_Board AS TB 
+INNER JOIN Tbl_Member AS TM ON TB.MemIdx = TM.MemIdx 
+left JOIN Tbl_BoardImage AS TBI ON TB.BIdx = TBI.BIdx 
+ WHERE 1=1 and 
+TB.ComCode='2003'  
+ order by  TB.RegDate desc 
+ limit 0, 20 
+
+Query 실행 시간 0.0034089088439941
+============================================
+
+============================================
+2021-10-14 18:54:23 쿼리 시작
+SELECT 
+* 
+ FROM Tbl_Board 
+ WHERE 1=1 and 
+Bidx='437'  
+
+Query 실행 시간 0.0027430057525635
+============================================
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#7952b3">
+    <meta property="og:image" content="http://nodosi.co.kr/img/fav/favicon-16x16.png">
+    <title>노도시</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/css/base.css?cache=<?=date('Ymdmsi')?>"  rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/blueimp-gallery.css">
+    <script type="text/javascript" src="/js/function.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/f7cacd7fe0.js" crossorigin="anonymous"></script>
+    <script tpye="text/javascript" src="/js/function.js?cache=<?=date('Ymdmsi')?>"></script>
+
+    <script type="text/javascript" src="/js/blueimp-gallery.js"></script>
+    <script type="text/javascript" src="/js/jquery.blueimp-gallery.js"></script>
+</head>
+<body class="bg-dark">
+<div class="container bg-light" style="min-height: 400px;">
+
